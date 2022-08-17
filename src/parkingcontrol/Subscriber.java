@@ -4,6 +4,7 @@
  */
 package parkingcontrol;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
@@ -11,7 +12,7 @@ import java.util.Calendar;
  *
  * @author davip
  */
-public class Subscriber {
+public class Subscriber implements Serializable {
     private String      name;
     private String      carModel;
     private String      subscriptionDate;
@@ -75,9 +76,6 @@ public class Subscriber {
         return this.isMensalist;
 
     }
-    
-    
-    
     
     public void setAutoSubscriptionDate(){
         String aux;

@@ -4,6 +4,7 @@
  */
 package parkingcontrol;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -12,7 +13,7 @@ import java.util.Calendar;
  *
  * @author davip
  */
-public class VeiculeClass {
+public class VeiculeClass implements Serializable{
     private SimpleDateFormat    formatter;
     private String              license;
     private String              timeIn;
