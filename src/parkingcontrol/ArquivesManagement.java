@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class ArquivesManagement {
     public void SaveFile(ArrayList<Object> list, String filepath){
-        File arq = new File(filepath);
+        File arq = new File(filepath+".2de");
         try{
             arq.delete();
             arq.createNewFile();
@@ -59,6 +59,20 @@ public class ArquivesManagement {
         
         
         return list;
+    }
+    
+    
+    public void AutoLoad(ArrayList<Object> Veic, ArrayList<Object> Subs){
+        ArrayList<Object> ListVeic = this.LoadFile("Documentos/autosaveVeic.2de");
+        ArrayList<Object> ListSubs = this.LoadFile("Documentos/autosaveSubs.2de");
+        Veic = ListVeic;
+        Subs = ListSubs;
+        
+    }
+    
+    public void AutoSave(ArrayList<Object> Veic, ArrayList<Object> Subs){
+        this.SaveFile(Veic, "Documentos/autosaveVeic.2de");
+        this.SaveFile(Subs, "Documentos/autosaveSubs.2de");
     }
         
     
