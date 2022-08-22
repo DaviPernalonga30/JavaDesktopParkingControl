@@ -38,6 +38,17 @@ public class MainMenu extends javax.swing.JFrame {
         AddVeicDialogConfirmButton = new javax.swing.JToggleButton();
         TextPlacaDoVeiculo = new javax.swing.JLabel();
         TextHorarioDeEntrada = new javax.swing.JLabel();
+        AddSubDialog = new javax.swing.JDialog();
+        AddSubDialogName = new javax.swing.JTextField();
+        AddSubDialogLicense = new javax.swing.JTextField();
+        AddSubDialogContact = new javax.swing.JTextField();
+        AddSubDialogTextName = new javax.swing.JLabel();
+        AddSubDialogTextLicense = new javax.swing.JLabel();
+        AddSubDialogTextContact = new javax.swing.JLabel();
+        AddSubDialogConfirmButton = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        AddSubDialogCarModel = new javax.swing.JTextField();
+        AddSubDialogTextCarModel = new javax.swing.JLabel();
         AddVeic = new javax.swing.JButton();
         ScrollPaneTable = new javax.swing.JScrollPane();
         mainTable = new javax.swing.JTable();
@@ -78,11 +89,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         AddVeicDialogSubscriber.setText("Mensalista");
-        AddVeicDialogSubscriber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddVeicDialogSubscriberActionPerformed(evt);
-            }
-        });
 
         AddVeicDialogHasKey.setText("Chave do Carro");
 
@@ -140,6 +146,89 @@ public class MainMenu extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
                 .addComponent(AddVeicDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
+        );
+
+        AddSubDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        AddSubDialog.setTitle("Adicionar Mensalista");
+        AddSubDialog.setAlwaysOnTop(true);
+        AddSubDialog.setMinimumSize(new java.awt.Dimension(400, 400));
+        AddSubDialog.setName("AddSubDialog"); // NOI18N
+
+        AddSubDialogName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddSubDialogNameActionPerformed(evt);
+            }
+        });
+
+        AddSubDialogTextName.setText("Nome");
+
+        AddSubDialogTextLicense.setText("Placa");
+
+        AddSubDialogTextContact.setText("Contato");
+
+        AddSubDialogConfirmButton.setText("Adicionar");
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        AddSubDialogCarModel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddSubDialogCarModelActionPerformed(evt);
+            }
+        });
+
+        AddSubDialogTextCarModel.setText("Modelo do carro");
+
+        javax.swing.GroupLayout AddSubDialogLayout = new javax.swing.GroupLayout(AddSubDialog.getContentPane());
+        AddSubDialog.getContentPane().setLayout(AddSubDialogLayout);
+        AddSubDialogLayout.setHorizontalGroup(
+            AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddSubDialogLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AddSubDialogName, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                    .addComponent(AddSubDialogLicense)
+                    .addComponent(AddSubDialogContact)
+                    .addComponent(AddSubDialogCarModel))
+                .addGap(18, 18, 18)
+                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddSubDialogLayout.createSequentialGroup()
+                        .addComponent(AddSubDialogTextCarModel)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(AddSubDialogLayout.createSequentialGroup()
+                        .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AddSubDialogTextContact)
+                            .addComponent(AddSubDialogTextName)
+                            .addComponent(AddSubDialogTextLicense))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
+                        .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AddSubDialogConfirmButton))
+                        .addGap(30, 30, 30))))
+        );
+        AddSubDialogLayout.setVerticalGroup(
+            AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddSubDialogLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(AddSubDialogName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(AddSubDialogTextName)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddSubDialogLicense, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+                    .addComponent(AddSubDialogTextLicense))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddSubDialogContact, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddSubDialogTextContact))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddSubDialogCarModel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddSubDialogTextCarModel))
+                .addGap(31, 31, 31)
+                .addComponent(AddSubDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -220,7 +309,6 @@ public class MainMenu extends javax.swing.JFrame {
         });
 
         DesktopPane.setMinimumSize(new java.awt.Dimension(400, 439));
-        DesktopPane.setPreferredSize(new java.awt.Dimension(400, 439));
 
         javax.swing.GroupLayout DesktopPaneLayout = new javax.swing.GroupLayout(DesktopPane);
         DesktopPane.setLayout(DesktopPaneLayout);
@@ -327,16 +415,30 @@ public class MainMenu extends javax.swing.JFrame {
         
         AddVeicDialog.setLocation(DesktopPane.getLocationOnScreen());
         AddVeicDialog.setVisible(true);
+        //AddVeicDialogConfirmButton.setFocusTraversalKeys(WIDTH, );
         
     }//GEN-LAST:event_AddVeicActionPerformed
 
     private void AddSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSubActionPerformed
+        AddSubDialog.setLocation(DesktopPane.getLocationOnScreen());
+        AddSubDialog.setVisible(true);
+
         // TODO add your handling code here:
     }//GEN-LAST:event_AddSubActionPerformed
 
     private void menubarNewWindowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menubarNewWindowActionPerformed
         // TODO add your handling code here:
-        new MainMenu().setVisible(true);
+        new Thread(){
+        @Override
+        public void run(){
+            
+            MainMenu aux = new MainMenu();
+            aux.setVisible(true);
+            
+            }
+        
+        }.start();
+        
         //ainda n ta 100%
         
     }//GEN-LAST:event_menubarNewWindowActionPerformed
@@ -374,7 +476,18 @@ public class MainMenu extends javax.swing.JFrame {
         else{
             veic.setManualTimeIn(AddVeicDialogManualTime.getText());
         }
-        
+        if(AddVeicDialogSubscriber.isSelected() == true){
+            veic.setManualIsSubscriber(true);
+        }
+        else{
+            veic.setIsSubscriber(subscriberList);
+        }
+        if(AddVeicDialogHasKey.isSelected() == true){
+            veic.setHasKey(true);
+        }
+        else{
+            veic.setHasKey(false);
+        }
         
         
         
@@ -382,13 +495,17 @@ public class MainMenu extends javax.swing.JFrame {
         
         
         veiculeList.add(veic);
-        System.out.println(veiculeList.get(0).getLicense() + " " + veiculeList.get(0).getTimeIn());
+        System.out.println(veiculeList.get(0).getLicense() + " " + veiculeList.get(0).getTimeIn() + " " + veiculeList.get(0).getIsSubscriber().toString() + " " + veiculeList.get(0).getHasKey().toString() );
         
         
         
         
         
         AddVeicDialog.dispose();
+        AddVeicDialogLicense.setText("");
+        AddVeicDialogManualTime.setText("");
+        AddVeicDialogSubscriber.setSelected(false);
+        AddVeicDialogHasKey.setSelected(false);
         
         
     }//GEN-LAST:event_AddVeicDialogConfirmButtonActionPerformed
@@ -397,9 +514,13 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AddVeicDialogManualTimeActionPerformed
 
-    private void AddVeicDialogSubscriberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddVeicDialogSubscriberActionPerformed
+    private void AddSubDialogNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSubDialogNameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_AddVeicDialogSubscriberActionPerformed
+    }//GEN-LAST:event_AddSubDialogNameActionPerformed
+
+    private void AddSubDialogCarModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSubDialogCarModelActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddSubDialogCarModelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -438,6 +559,16 @@ public class MainMenu extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddSub;
+    private javax.swing.JDialog AddSubDialog;
+    private javax.swing.JTextField AddSubDialogCarModel;
+    private javax.swing.JButton AddSubDialogConfirmButton;
+    private javax.swing.JTextField AddSubDialogContact;
+    private javax.swing.JTextField AddSubDialogLicense;
+    private javax.swing.JTextField AddSubDialogName;
+    private javax.swing.JLabel AddSubDialogTextCarModel;
+    private javax.swing.JLabel AddSubDialogTextContact;
+    private javax.swing.JLabel AddSubDialogTextLicense;
+    private javax.swing.JLabel AddSubDialogTextName;
     private javax.swing.JButton AddVeic;
     private javax.swing.JDialog AddVeicDialog;
     private javax.swing.JToggleButton AddVeicDialogConfirmButton;
@@ -451,6 +582,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane ScrollPaneTable;
     private javax.swing.JLabel TextHorarioDeEntrada;
     private javax.swing.JLabel TextPlacaDoVeiculo;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem5;
@@ -462,7 +594,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem menubarSave;
     // End of variables declaration//GEN-END:variables
     private ArrayList<VeiculeClass> veiculeList = new ArrayList();
-    private ArrayList<Subscriber> subscriberList;
+    private ArrayList<Subscriber> subscriberList = new ArrayList();
     private ArrayList<Object> list;
 
 
