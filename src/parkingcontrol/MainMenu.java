@@ -46,9 +46,15 @@ public class MainMenu extends javax.swing.JFrame {
         AddSubDialogTextLicense = new javax.swing.JLabel();
         AddSubDialogTextContact = new javax.swing.JLabel();
         AddSubDialogConfirmButton = new javax.swing.JButton();
-        jComboBox1 = new javax.swing.JComboBox<>();
         AddSubDialogCarModel = new javax.swing.JTextField();
         AddSubDialogTextCarModel = new javax.swing.JLabel();
+        AddSubDialogTextDays = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
         AddVeic = new javax.swing.JButton();
         ScrollPaneTable = new javax.swing.JScrollPane();
         mainTable = new javax.swing.JTable();
@@ -151,7 +157,7 @@ public class MainMenu extends javax.swing.JFrame {
         AddSubDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         AddSubDialog.setTitle("Adicionar Mensalista");
         AddSubDialog.setAlwaysOnTop(true);
-        AddSubDialog.setMinimumSize(new java.awt.Dimension(400, 400));
+        AddSubDialog.setMinimumSize(new java.awt.Dimension(400, 439));
         AddSubDialog.setName("AddSubDialog"); // NOI18N
 
         AddSubDialogName.addActionListener(new java.awt.event.ActionListener() {
@@ -168,8 +174,6 @@ public class MainMenu extends javax.swing.JFrame {
 
         AddSubDialogConfirmButton.setText("Adicionar");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
         AddSubDialogCarModel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AddSubDialogCarModelActionPerformed(evt);
@@ -178,42 +182,70 @@ public class MainMenu extends javax.swing.JFrame {
 
         AddSubDialogTextCarModel.setText("Modelo do carro");
 
+        AddSubDialogTextDays.setText("Dias");
+
+        jCheckBox1.setText("jCheckBox1");
+
+        jCheckBox2.setText("jCheckBox2");
+
+        jCheckBox3.setText("jCheckBox3");
+
+        jCheckBox4.setText("jCheckBox4");
+
+        jCheckBox5.setText("jCheckBox5");
+
+        jCheckBox6.setText("jCheckBox6");
+
         javax.swing.GroupLayout AddSubDialogLayout = new javax.swing.GroupLayout(AddSubDialog.getContentPane());
         AddSubDialog.getContentPane().setLayout(AddSubDialogLayout);
         AddSubDialogLayout.setHorizontalGroup(
             AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddSubDialogLayout.createSequentialGroup()
+                .addGap(72, 72, 72)
+                .addComponent(AddSubDialogTextDays)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(AddSubDialogLayout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(AddSubDialogName, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                    .addComponent(AddSubDialogLicense)
-                    .addComponent(AddSubDialogContact)
-                    .addComponent(AddSubDialogCarModel))
-                .addGap(18, 18, 18)
                 .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddSubDialogLayout.createSequentialGroup()
-                        .addComponent(AddSubDialogTextCarModel)
+                        .addComponent(jCheckBox5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jCheckBox6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
+                        .addComponent(AddSubDialogConfirmButton)
+                        .addGap(39, 39, 39))
+                    .addGroup(AddSubDialogLayout.createSequentialGroup()
+                        .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AddSubDialogName, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AddSubDialogLicense, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AddSubDialogContact, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AddSubDialogCarModel, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addGap(18, 18, 18)
+                        .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AddSubDialogTextCarModel)
+                            .addComponent(AddSubDialogTextContact)
+                            .addComponent(AddSubDialogTextLicense)
+                            .addComponent(AddSubDialogTextName))
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(AddSubDialogLayout.createSequentialGroup()
                         .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AddSubDialogTextContact)
-                            .addComponent(AddSubDialogTextName)
-                            .addComponent(AddSubDialogTextLicense))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                        .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AddSubDialogConfirmButton))
-                        .addGap(30, 30, 30))))
+                            .addGroup(AddSubDialogLayout.createSequentialGroup()
+                                .addComponent(jCheckBox3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jCheckBox4))
+                            .addGroup(AddSubDialogLayout.createSequentialGroup()
+                                .addComponent(jCheckBox1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jCheckBox2)))
+                        .addGap(0, 0, Short.MAX_VALUE))))
         );
         AddSubDialogLayout.setVerticalGroup(
             AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(AddSubDialogLayout.createSequentialGroup()
                 .addGap(31, 31, 31)
-                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(AddSubDialogName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(AddSubDialogTextName)))
+                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddSubDialogName, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AddSubDialogTextName))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddSubDialogLicense, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
@@ -226,9 +258,26 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddSubDialogCarModel, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AddSubDialogTextCarModel))
-                .addGap(31, 31, 31)
-                .addComponent(AddSubDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(18, 18, 18)
+                .addComponent(AddSubDialogTextDays)
+                .addGap(18, 18, 18)
+                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jCheckBox2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBox4))
+                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddSubDialogLayout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addComponent(AddSubDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AddSubDialogLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jCheckBox5)
+                            .addComponent(jCheckBox6))))
+                .addGap(35, 35, 35))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -567,6 +616,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField AddSubDialogName;
     private javax.swing.JLabel AddSubDialogTextCarModel;
     private javax.swing.JLabel AddSubDialogTextContact;
+    private javax.swing.JLabel AddSubDialogTextDays;
     private javax.swing.JLabel AddSubDialogTextLicense;
     private javax.swing.JLabel AddSubDialogTextName;
     private javax.swing.JButton AddVeic;
@@ -582,7 +632,12 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JScrollPane ScrollPaneTable;
     private javax.swing.JLabel TextHorarioDeEntrada;
     private javax.swing.JLabel TextPlacaDoVeiculo;
-    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuItem jMenuItem5;
