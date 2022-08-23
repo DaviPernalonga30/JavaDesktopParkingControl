@@ -20,7 +20,7 @@ public class Subscriber implements Serializable {
     private String      weekDays;
     private String      contact;
     private String      license;
-    private Boolean     isMensalist;
+    private Boolean     isMensalist = true;
    
     
     
@@ -86,9 +86,25 @@ public class Subscriber implements Serializable {
     }
     
     public void setAutoSubscriptionDeadLine(){
+        String aux = this.getSubscriptionDate();
+        aux = aux.substring(0, 2);
+        this.setManualSubscriptionDeadLine(aux);
         
-        return;
         
+    }
+    
+    
+    public void setAutoIsMensalist(){
+        String aux;
+        SimpleDateFormat formatter;
+        formatter = new SimpleDateFormat("dd");
+        aux = formatter.format(Calendar.getInstance().getTime());
+        if(aux.equals(this.getSubscriptionDate().substring(0, 2))){
+            this.setIsMensalist(false);
+            return;
+        }
+        
+        this.setIsMensalist(true);
     }
     
     

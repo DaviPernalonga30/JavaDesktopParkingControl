@@ -60,7 +60,8 @@ public class VeiculeClass implements Serializable{
         String auxLicense = this.getLicense();
         this.isSubscriber = false;
         for(int i = 0; i<list.size(); i = i+1){
-            if(list.get(i).getLicense().equals(auxLicense)){
+            list.get(i).setAutoIsMensalist();
+            if(list.get(i).getLicense().toLowerCase().equals(auxLicense.toLowerCase())){
                 if(list.get(i).getIsMensalist() == true){
                     this.isSubscriber = true;
                 }

@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @author davip
  */
 public class ArquivesManagement {
-    public void SaveFile(ArrayList<Object> list, String filepath){
+    public void SaveFile(ArrayList list, String filepath){
         File arq = new File(filepath+".2de");
         try{
             arq.delete();
@@ -37,14 +37,14 @@ public class ArquivesManagement {
         
     }
     
-    public ArrayList<Object> LoadFile(String filepath){
-        ArrayList<Object> list = new ArrayList<>();
+    public ArrayList LoadFile(String filepath){
+        ArrayList list = new ArrayList();
         try{            
             FileInputStream aux2 = new FileInputStream(filepath);
             
             ObjectInputStream objInput = new ObjectInputStream(aux2);
             
-            list = (ArrayList<Object>)objInput.readObject();
+            list = (ArrayList)objInput.readObject();
             objInput.close();
             
         }
@@ -62,17 +62,17 @@ public class ArquivesManagement {
     }
     
     
-    public void AutoLoad(ArrayList<Object> Veic, ArrayList<Object> Subs){
-        ArrayList<Object> ListVeic = this.LoadFile("Documentos/autosaveVeic.2de");
-        ArrayList<Object> ListSubs = this.LoadFile("Documentos/autosaveSubs.2de");
+    public void AutoLoad(ArrayList Veic, ArrayList Subs){
+        ArrayList ListVeic = this.LoadFile("Documentos/autosaveVeic.2de");
+        ArrayList ListSubs = this.LoadFile("Documentos/autosaveSubs.2de");
         Veic = ListVeic;
         Subs = ListSubs;
         
     }
     
-    public void AutoSave(ArrayList<Object> Veic, ArrayList<Object> Subs){
-        this.SaveFile(Veic, "Documentos/autosaveVeic.2de");
-        this.SaveFile(Subs, "Documentos/autosaveSubs.2de");
+    public void AutoSave(ArrayList Veic, ArrayList Subs){
+        this.SaveFile(Veic, "Documentos/autosaveVeic");
+        this.SaveFile(Subs, "Documentos/autosaveSubs");
     }
         
     

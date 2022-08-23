@@ -49,17 +49,22 @@ public class MainMenu extends javax.swing.JFrame {
         AddSubDialogCarModel = new javax.swing.JTextField();
         AddSubDialogTextCarModel = new javax.swing.JLabel();
         AddSubDialogTextDays = new javax.swing.JLabel();
-        jCheckBox1 = new javax.swing.JCheckBox();
-        jCheckBox2 = new javax.swing.JCheckBox();
-        jCheckBox3 = new javax.swing.JCheckBox();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jCheckBox5 = new javax.swing.JCheckBox();
-        jCheckBox6 = new javax.swing.JCheckBox();
+        AddSubDialogBox1 = new javax.swing.JCheckBox();
+        AddSubDialogBox2 = new javax.swing.JCheckBox();
+        AddSubDialogBox3 = new javax.swing.JCheckBox();
+        AddSubDialogBox4 = new javax.swing.JCheckBox();
+        AddSubDialogBox5 = new javax.swing.JCheckBox();
+        AddSubDialogBox6 = new javax.swing.JCheckBox();
+        SubscriberView = new javax.swing.JDialog();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        SubTable = new javax.swing.JTable();
         AddVeic = new javax.swing.JButton();
         ScrollPaneTable = new javax.swing.JScrollPane();
         mainTable = new javax.swing.JTable();
         AddSub = new javax.swing.JButton();
         DesktopPane = new javax.swing.JDesktopPane();
+        RemoveSub = new javax.swing.JButton();
+        RemoveVeic = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menubarNew = new javax.swing.JMenuItem();
@@ -67,8 +72,10 @@ public class MainMenu extends javax.swing.JFrame {
         menubarSave = new javax.swing.JMenuItem();
         menubarNewWindow = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
+        EditMenuEditVeic = new javax.swing.JMenuItem();
+        EditMenuEditSub = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        ViewMenuSubscriberView = new javax.swing.JMenuItem();
 
         SaveLoadDialog.setPreferredSize(new java.awt.Dimension(500, 300));
 
@@ -78,7 +85,6 @@ public class MainMenu extends javax.swing.JFrame {
         AddVeicDialog.setIconImage(null);
         AddVeicDialog.setLocation(DesktopPane.location());
         AddVeicDialog.setMinimumSize(new java.awt.Dimension(400, 300));
-        AddVeicDialog.setPreferredSize(new java.awt.Dimension(400, 300));
         AddVeicDialog.setResizable(false);
 
         AddVeicDialogLicense.setName("Placa do Carro"); // NOI18N
@@ -173,6 +179,11 @@ public class MainMenu extends javax.swing.JFrame {
         AddSubDialogTextContact.setText("Contato");
 
         AddSubDialogConfirmButton.setText("Adicionar");
+        AddSubDialogConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddSubDialogConfirmButtonActionPerformed(evt);
+            }
+        });
 
         AddSubDialogCarModel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -184,17 +195,17 @@ public class MainMenu extends javax.swing.JFrame {
 
         AddSubDialogTextDays.setText("Dias");
 
-        jCheckBox1.setText("jCheckBox1");
+        AddSubDialogBox1.setText("Segunda");
 
-        jCheckBox2.setText("jCheckBox2");
+        AddSubDialogBox2.setText("Terça");
 
-        jCheckBox3.setText("jCheckBox3");
+        AddSubDialogBox3.setText("Quarta");
 
-        jCheckBox4.setText("jCheckBox4");
+        AddSubDialogBox4.setText("Quinta");
 
-        jCheckBox5.setText("jCheckBox5");
+        AddSubDialogBox5.setText("Sexta");
 
-        jCheckBox6.setText("jCheckBox6");
+        AddSubDialogBox6.setText("Per-Noite");
 
         javax.swing.GroupLayout AddSubDialogLayout = new javax.swing.GroupLayout(AddSubDialog.getContentPane());
         AddSubDialog.getContentPane().setLayout(AddSubDialogLayout);
@@ -208,13 +219,6 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddSubDialogLayout.createSequentialGroup()
-                        .addComponent(jCheckBox5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jCheckBox6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
-                        .addComponent(AddSubDialogConfirmButton)
-                        .addGap(39, 39, 39))
-                    .addGroup(AddSubDialogLayout.createSequentialGroup()
                         .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AddSubDialogName, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(AddSubDialogLicense, javax.swing.GroupLayout.Alignment.TRAILING)
@@ -226,18 +230,24 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(AddSubDialogTextContact)
                             .addComponent(AddSubDialogTextLicense)
                             .addComponent(AddSubDialogTextName))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap())
                     .addGroup(AddSubDialogLayout.createSequentialGroup()
                         .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AddSubDialogBox3)
+                            .addComponent(AddSubDialogBox1)
+                            .addComponent(AddSubDialogBox5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(AddSubDialogLayout.createSequentialGroup()
-                                .addComponent(jCheckBox3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox4))
+                                .addComponent(AddSubDialogBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
+                                .addComponent(AddSubDialogConfirmButton)
+                                .addGap(39, 39, 39))
                             .addGroup(AddSubDialogLayout.createSequentialGroup()
-                                .addComponent(jCheckBox1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jCheckBox2)))
-                        .addGap(0, 0, Short.MAX_VALUE))))
+                                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(AddSubDialogBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(AddSubDialogBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addGap(0, 0, Short.MAX_VALUE))))))
         );
         AddSubDialogLayout.setVerticalGroup(
             AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -262,12 +272,12 @@ public class MainMenu extends javax.swing.JFrame {
                 .addComponent(AddSubDialogTextDays)
                 .addGap(18, 18, 18)
                 .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox1)
-                    .addComponent(jCheckBox2))
+                    .addComponent(AddSubDialogBox1)
+                    .addComponent(AddSubDialogBox2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBox3)
-                    .addComponent(jCheckBox4))
+                    .addComponent(AddSubDialogBox3)
+                    .addComponent(AddSubDialogBox4))
                 .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddSubDialogLayout.createSequentialGroup()
                         .addGap(23, 23, 23)
@@ -275,32 +285,88 @@ public class MainMenu extends javax.swing.JFrame {
                     .addGroup(AddSubDialogLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCheckBox5)
-                            .addComponent(jCheckBox6))))
+                            .addComponent(AddSubDialogBox5)
+                            .addComponent(AddSubDialogBox6))))
                 .addGap(35, 35, 35))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Controle de Veículos");
-        setAlwaysOnTop(true);
-        setForeground(java.awt.Color.lightGray);
-        setName("mainMenu"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(800, 600));
-        setResizable(false);
-        setSize(new java.awt.Dimension(800, 600));
+        SubscriberView.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        SubscriberView.setTitle("Tabela de Mensalista");
+        SubscriberView.setAlwaysOnTop(true);
+        SubscriberView.setMinimumSize(new java.awt.Dimension(800, 480));
 
-        AddVeic.setText("Adicionar Veículo");
-        AddVeic.setPreferredSize(new java.awt.Dimension(70, 20));
-        AddVeic.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AddVeicActionPerformed(evt);
-            }
-        });
-
-        ScrollPaneTable.setPreferredSize(new java.awt.Dimension(300, 500));
-
-        mainTable.setModel(new javax.swing.table.DefaultTableModel(
+        SubTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null},
@@ -333,19 +399,133 @@ public class MainMenu extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4", "Title 5", "Title 6", "Title 7", "Title 8"
+                "Nome", "Contato", "Placa", "Modelo do Carro", "Dias", "Dia de Início", "Dia de finalização", "Mensalista"
             }
         ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        SubTable.setMinimumSize(new java.awt.Dimension(800, 480));
+        jScrollPane1.setViewportView(SubTable);
+
+        javax.swing.GroupLayout SubscriberViewLayout = new javax.swing.GroupLayout(SubscriberView.getContentPane());
+        SubscriberView.getContentPane().setLayout(SubscriberViewLayout);
+        SubscriberViewLayout.setHorizontalGroup(
+            SubscriberViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, SubscriberViewLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 808, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        SubscriberViewLayout.setVerticalGroup(
+            SubscriberViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(SubscriberViewLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Controle de Veículos");
+        setAlwaysOnTop(true);
+        setForeground(java.awt.Color.lightGray);
+        setMinimumSize(new java.awt.Dimension(800, 700));
+        setName("mainMenu"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(800, 600));
+        setResizable(false);
+        setSize(new java.awt.Dimension(800, 600));
+
+        AddVeic.setText("Adicionar Veículo");
+        AddVeic.setPreferredSize(new java.awt.Dimension(70, 20));
+        AddVeic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddVeicActionPerformed(evt);
+            }
+        });
+
+        ScrollPaneTable.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        ScrollPaneTable.setMinimumSize(new java.awt.Dimension(300, 550));
+        ScrollPaneTable.setPreferredSize(new java.awt.Dimension(300, 550));
+
+        mainTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Placa", "Entrada", "Saída", "Mensalista", "Chave"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        mainTable.setMinimumSize(new java.awt.Dimension(300, 480));
-        mainTable.setPreferredSize(new java.awt.Dimension(400, 500));
+        mainTable.setMinimumSize(new java.awt.Dimension(300, 550));
+        mainTable.setPreferredSize(new java.awt.Dimension(300, 550));
         mainTable.setShowGrid(true);
         ScrollPaneTable.setViewportView(mainTable);
 
@@ -357,18 +537,34 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        DesktopPane.setMinimumSize(new java.awt.Dimension(400, 439));
+        DesktopPane.setMinimumSize(new java.awt.Dimension(400, 550));
 
         javax.swing.GroupLayout DesktopPaneLayout = new javax.swing.GroupLayout(DesktopPane);
         DesktopPane.setLayout(DesktopPaneLayout);
         DesktopPaneLayout.setHorizontalGroup(
             DesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 402, Short.MAX_VALUE)
         );
         DesktopPaneLayout.setVerticalGroup(
             DesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 0, Short.MAX_VALUE)
         );
+
+        RemoveSub.setText("Remover Mensalista");
+        RemoveSub.setPreferredSize(new java.awt.Dimension(70, 20));
+        RemoveSub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveSubActionPerformed(evt);
+            }
+        });
+
+        RemoveVeic.setText("Remover Veículo");
+        RemoveVeic.setPreferredSize(new java.awt.Dimension(70, 20));
+        RemoveVeic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveVeicActionPerformed(evt);
+            }
+        });
 
         jMenu1.setText("File");
 
@@ -413,13 +609,30 @@ public class MainMenu extends javax.swing.JFrame {
 
         jMenu2.setText("Edit");
 
-        jMenuItem5.setText("jMenuItem5");
-        jMenu2.add(jMenuItem5);
+        EditMenuEditVeic.setText("Editar Veículo");
+        EditMenuEditVeic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditMenuEditVeicActionPerformed(evt);
+            }
+        });
+        jMenu2.add(EditMenuEditVeic);
 
-        jMenuItem6.setText("jMenuItem6");
-        jMenu2.add(jMenuItem6);
+        EditMenuEditSub.setText("Editar Mensalista");
+        jMenu2.add(EditMenuEditSub);
 
         MenuBar.add(jMenu2);
+
+        jMenu3.setText("View");
+
+        ViewMenuSubscriberView.setText("Mensalistas");
+        ViewMenuSubscriberView.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewMenuSubscriberViewActionPerformed(evt);
+            }
+        });
+        jMenu3.add(ViewMenuSubscriberView);
+
+        MenuBar.add(jMenu3);
 
         setJMenuBar(MenuBar);
 
@@ -431,27 +644,35 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(ScrollPaneTable, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(AddVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(12, 12, 12)
                         .addComponent(AddSub, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(DesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(48, Short.MAX_VALUE))
+                    .addComponent(DesktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(RemoveVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(RemoveSub, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(46, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ScrollPaneTable, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(AddVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AddSub, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(AddSub, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AddVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(RemoveSub, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(RemoveVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(DesktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(ScrollPaneTable, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(49, Short.MAX_VALUE))
+                        .addComponent(DesktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 434, Short.MAX_VALUE)))
+                .addGap(53, 53, 53))
         );
 
         getAccessibleContext().setAccessibleDescription("");
@@ -504,6 +725,8 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void menubarSaveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menubarSaveActionPerformed
         // TODO add your handling code here:
+        ArquivesManagement arq = new ArquivesManagement();
+        arq.AutoSave(veiculeList, subscriberList);
         
     }//GEN-LAST:event_menubarSaveActionPerformed
 
@@ -539,16 +762,22 @@ public class MainMenu extends javax.swing.JFrame {
         }
         
         
-        
+        //veic.setIsSubscriber(subscriberList);
         
         
         
         veiculeList.add(veic);
+        
+        for(int i = 0; i<veiculeList.size(); i = i+1){
+            mainTable.setValueAt(veiculeList.get(i).getLicense().toUpperCase(), i, 0);
+            mainTable.setValueAt(veiculeList.get(i).getTimeIn(), i, 1);
+            mainTable.setValueAt(veiculeList.get(i).getTimeOut(), i, 2);
+            mainTable.setValueAt(veiculeList.get(i).getIsSubscriber(), i, 3);
+            mainTable.setValueAt(veiculeList.get(i).getHasKey(), i, 4);
+            
+            
+        }
         System.out.println(veiculeList.get(0).getLicense() + " " + veiculeList.get(0).getTimeIn() + " " + veiculeList.get(0).getIsSubscriber().toString() + " " + veiculeList.get(0).getHasKey().toString() );
-        
-        
-        
-        
         
         AddVeicDialog.dispose();
         AddVeicDialogLicense.setText("");
@@ -570,6 +799,111 @@ public class MainMenu extends javax.swing.JFrame {
     private void AddSubDialogCarModelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSubDialogCarModelActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AddSubDialogCarModelActionPerformed
+
+    private void AddSubDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddSubDialogConfirmButtonActionPerformed
+        // TODO add your handling code here:
+        String aux ="";
+        Subscriber sub = new Subscriber();
+        sub.setName(AddSubDialogName.getText());
+        sub.setAutoSubscriptionDate();
+        sub.setContact(AddSubDialogContact.getText());
+        if(AddSubDialogLicense.getText() != null){
+            sub.setLicense(AddSubDialogLicense.getText());
+        }
+        if(AddSubDialogCarModel.getText() != null){
+            sub.setCarModel(AddSubDialogCarModel.getText());
+        }
+        
+        
+        
+        //CheckBox ifs
+        if(AddSubDialogBox1.isSelected() == true){
+            aux = aux + "Seg ";
+        }
+        if(AddSubDialogBox2.isSelected() == true){
+            aux = aux + "Ter ";
+        }
+        if(AddSubDialogBox3.isSelected() == true){
+            aux = aux + "Qua ";
+        }
+        if(AddSubDialogBox4.isSelected() == true){
+            aux = aux + "Qui ";
+        }
+        if(AddSubDialogBox5.isSelected() == true){
+            aux = aux + "Sex ";
+        }
+        if(AddSubDialogBox6.isSelected() == true){
+            aux = aux + "PNT";
+        }
+        
+        sub.setWeekDays(aux);
+        sub.setAutoSubscriptionDeadLine();
+        sub.setAutoIsMensalist();
+        
+        
+        //sub.setAutoSubscriptionDeadLine();
+        System.out.println(sub.getName() + " " + sub.getSubscriptionDate() + " " + sub.getContact());
+        
+        subscriberList.add(sub);
+        AddSubDialog.dispose();
+        AddSubDialogName.setText("");
+        AddSubDialogLicense.setText("");
+        AddSubDialogContact.setText("");
+        AddSubDialogCarModel.setText("");
+        AddSubDialogBox1.setSelected(false);
+        AddSubDialogBox2.setSelected(false);
+        AddSubDialogBox3.setSelected(false);
+        AddSubDialogBox4.setSelected(false);
+        AddSubDialogBox5.setSelected(false);
+        AddSubDialogBox6.setSelected(false);
+        
+        
+        
+        
+    }//GEN-LAST:event_AddSubDialogConfirmButtonActionPerformed
+
+    private void ViewMenuSubscriberViewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewMenuSubscriberViewActionPerformed
+        // TODO add your handling code here:
+        
+        
+        SubscriberView.setVisible(true);
+        
+        for(int i = 0; i<subscriberList.size(); i = i+1){
+            subscriberList.get(i).setAutoIsMensalist();
+            SubTable.setValueAt(subscriberList.get(i).getName(), i, 0);
+            SubTable.setValueAt(subscriberList.get(i).getContact(), i, 1);
+            SubTable.setValueAt(subscriberList.get(i).getLicense().toUpperCase(), i, 2);
+            SubTable.setValueAt(subscriberList.get(i).getCarModel(), i, 3);
+            SubTable.setValueAt(subscriberList.get(i).getWeekDays(), i, 4);
+            SubTable.setValueAt(subscriberList.get(i).getSubscriptionDate(), i, 5);
+            SubTable.setValueAt(subscriberList.get(i).getSubscriptionDeadLine(), i, 6);
+            SubTable.setValueAt(subscriberList.get(i).getIsMensalist(), i, 7);
+            
+            
+            
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_ViewMenuSubscriberViewActionPerformed
+
+    private void RemoveSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveSubActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RemoveSubActionPerformed
+
+    private void RemoveVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveVeicActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RemoveVeicActionPerformed
+
+    private void EditMenuEditVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditMenuEditVeicActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditMenuEditVeicActionPerformed
 
     /**
      * @param args the command line arguments
@@ -609,6 +943,12 @@ public class MainMenu extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddSub;
     private javax.swing.JDialog AddSubDialog;
+    private javax.swing.JCheckBox AddSubDialogBox1;
+    private javax.swing.JCheckBox AddSubDialogBox2;
+    private javax.swing.JCheckBox AddSubDialogBox3;
+    private javax.swing.JCheckBox AddSubDialogBox4;
+    private javax.swing.JCheckBox AddSubDialogBox5;
+    private javax.swing.JCheckBox AddSubDialogBox6;
     private javax.swing.JTextField AddSubDialogCarModel;
     private javax.swing.JButton AddSubDialogConfirmButton;
     private javax.swing.JTextField AddSubDialogContact;
@@ -627,21 +967,22 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField AddVeicDialogManualTime;
     private javax.swing.JCheckBox AddVeicDialogSubscriber;
     private javax.swing.JDesktopPane DesktopPane;
+    private javax.swing.JMenuItem EditMenuEditSub;
+    private javax.swing.JMenuItem EditMenuEditVeic;
     private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JButton RemoveSub;
+    private javax.swing.JButton RemoveVeic;
     private javax.swing.JFileChooser SaveLoadDialog;
     private javax.swing.JScrollPane ScrollPaneTable;
+    private javax.swing.JTable SubTable;
+    private javax.swing.JDialog SubscriberView;
     private javax.swing.JLabel TextHorarioDeEntrada;
     private javax.swing.JLabel TextPlacaDoVeiculo;
-    private javax.swing.JCheckBox jCheckBox1;
-    private javax.swing.JCheckBox jCheckBox2;
-    private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JCheckBox jCheckBox5;
-    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JMenuItem ViewMenuSubscriberView;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable mainTable;
     private javax.swing.JMenuItem menubarNew;
     private javax.swing.JMenuItem menubarNewWindow;
