@@ -87,7 +87,28 @@ public class Subscriber implements Serializable {
     
     public void setAutoSubscriptionDeadLine(){
         String aux = this.getSubscriptionDate();
-        aux = aux.substring(0, 2);
+        String aux2, aux3, aux4;
+        int auxint1, auxint2;
+        aux2    = aux.substring(0, 2);
+        aux3    = aux.substring(3, 5);
+        aux4    = aux.substring(6, 10);
+        auxint1 = Integer.parseInt(aux3);
+        auxint2 = Integer.parseInt(aux4);
+        if(auxint1 == 12){
+            auxint1 = 1;
+            auxint2 = auxint2 + 1;
+        }
+        else{
+            auxint1 = auxint1 + 1;
+        }
+        if(auxint1 > 9){
+            aux3 = String.valueOf(auxint1);
+        }
+        else{
+            aux3 = "0" + String.valueOf(auxint1);
+        }
+        
+        aux = aux2+ "/" + aux3 + "/" + String.valueOf(auxint2);
         this.setManualSubscriptionDeadLine(aux);
         
         
@@ -95,15 +116,38 @@ public class Subscriber implements Serializable {
     
     
     public void setAutoIsMensalist(){
-        String aux;
-        SimpleDateFormat formatter;
-        formatter = new SimpleDateFormat("dd");
-        aux = formatter.format(Calendar.getInstance().getTime());
-        if(aux.equals(this.getSubscriptionDate().substring(0, 2))){
-            this.setIsMensalist(false);
-            return;
-        }
+        String aux1, aux2, aux3;
+        int auxint1, auxint2, auxint3;
+        int dateaux1, dateaux2, dateaux3;
+        SimpleDateFormat formatter1, formatter2, formatter3;
+        formatter1 = new SimpleDateFormat("dd");
+        aux1 = formatter1.format(Calendar.getInstance().getTime());
+        dateaux1 = Integer.parseInt(aux1);
+        formatter2 = new SimpleDateFormat("MM");
+        aux2 = formatter2.format(Calendar.getInstance().getTime());
+        dateaux2 = Integer.parseInt(aux2);
+        formatter3 = new SimpleDateFormat("yyyy");
+        aux3 = formatter3.format(Calendar.getInstance().getTime());
+        dateaux3 = Integer.parseInt(aux3);
         
+        
+        auxint1 = Integer.parseInt(this.getSubscriptionDeadLine().substring(0, 2));
+        auxint2 = Integer.parseInt(this.getSubscriptionDeadLine().substring(3, 5));
+        auxint3 = Integer.parseInt(this.getSubscriptionDeadLine().substring(6, 10));
+        
+        
+        
+        
+        
+        if(dateaux1 == auxint1){
+            if(dateaux2 == auxint2){
+                if(dateaux3 == auxint3){
+                    this.setIsMensalist(false);
+                    return;
+                }
+            }
+          
+        }        
         this.setIsMensalist(true);
     }
     

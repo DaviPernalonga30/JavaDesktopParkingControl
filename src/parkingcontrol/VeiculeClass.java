@@ -20,7 +20,7 @@ public class VeiculeClass implements Serializable{
     private String              timeOut;
     private Boolean             isSubscriber;   //falta getters e setters e comparações.
     private Boolean             hasKey;
-    private String              name;           //Para conseguir saber se é mensalista
+    
     
     public void setLicense(String aux){
         this.license = aux;

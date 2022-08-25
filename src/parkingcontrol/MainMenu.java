@@ -4,6 +4,7 @@
  */
 package parkingcontrol;
 
+
 import java.io.File;
 import java.util.ArrayList;
 
@@ -58,6 +59,9 @@ public class MainMenu extends javax.swing.JFrame {
         SubscriberView = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
         SubTable = new javax.swing.JTable();
+        RemoveVeicDialog = new javax.swing.JDialog();
+        RemoveVeicDialogConfirmButton = new javax.swing.JButton();
+        RemoveVeicDialogComboBox = new javax.swing.JComboBox<>();
         AddVeic = new javax.swing.JButton();
         ScrollPaneTable = new javax.swing.JScrollPane();
         mainTable = new javax.swing.JTable();
@@ -297,113 +301,113 @@ public class MainMenu extends javax.swing.JFrame {
 
         SubTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Nome", "Contato", "Placa", "Modelo do Carro", "Dias", "Dia de Início", "Dia de finalização", "Mensalista"
+                "Qntd.", "Nome", "Contato", "Placa", "Modelo do Carro", "Dias", "Dia de Início", "Dia de finalização", "Mensalista"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -412,6 +416,12 @@ public class MainMenu extends javax.swing.JFrame {
         });
         SubTable.setMinimumSize(new java.awt.Dimension(800, 480));
         jScrollPane1.setViewportView(SubTable);
+        if (SubTable.getColumnModel().getColumnCount() > 0) {
+            SubTable.getColumnModel().getColumn(0).setMinWidth(30);
+            SubTable.getColumnModel().getColumn(0).setMaxWidth(30);
+            SubTable.getColumnModel().getColumn(8).setMinWidth(50);
+            SubTable.getColumnModel().getColumn(8).setMaxWidth(50);
+        }
 
         javax.swing.GroupLayout SubscriberViewLayout = new javax.swing.GroupLayout(SubscriberView.getContentPane());
         SubscriberView.getContentPane().setLayout(SubscriberViewLayout);
@@ -428,6 +438,49 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
                 .addContainerGap())
+        );
+
+        RemoveVeicDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        RemoveVeicDialog.setTitle("Remover Veículo");
+        RemoveVeicDialog.setAlwaysOnTop(true);
+        RemoveVeicDialog.setMinimumSize(new java.awt.Dimension(400, 300));
+        RemoveVeicDialog.setResizable(false);
+
+        RemoveVeicDialogConfirmButton.setText("Remover");
+        RemoveVeicDialogConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveVeicDialogConfirmButtonActionPerformed(evt);
+            }
+        });
+
+        RemoveVeicDialogComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] {}));
+        RemoveVeicDialogComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveVeicDialogComboBoxActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout RemoveVeicDialogLayout = new javax.swing.GroupLayout(RemoveVeicDialog.getContentPane());
+        RemoveVeicDialog.getContentPane().setLayout(RemoveVeicDialogLayout);
+        RemoveVeicDialogLayout.setHorizontalGroup(
+            RemoveVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoveVeicDialogLayout.createSequentialGroup()
+                .addContainerGap(276, Short.MAX_VALUE)
+                .addComponent(RemoveVeicDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(29, 29, 29))
+            .addGroup(RemoveVeicDialogLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(RemoveVeicDialogComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        RemoveVeicDialogLayout.setVerticalGroup(
+            RemoveVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoveVeicDialogLayout.createSequentialGroup()
+                .addGap(37, 37, 37)
+                .addComponent(RemoveVeicDialogComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
+                .addComponent(RemoveVeicDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(20, 20, 20))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -454,66 +507,86 @@ public class MainMenu extends javax.swing.JFrame {
 
         mainTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Placa", "Entrada", "Saída", "Mensalista", "Chave"
+                "Qntd.", "Placa", "Entrada", "Saída", "Mensalista", "Chave"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
+                false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -528,6 +601,14 @@ public class MainMenu extends javax.swing.JFrame {
         mainTable.setPreferredSize(new java.awt.Dimension(300, 550));
         mainTable.setShowGrid(true);
         ScrollPaneTable.setViewportView(mainTable);
+        if (mainTable.getColumnModel().getColumnCount() > 0) {
+            mainTable.getColumnModel().getColumn(0).setMinWidth(30);
+            mainTable.getColumnModel().getColumn(0).setMaxWidth(30);
+            mainTable.getColumnModel().getColumn(4).setMinWidth(30);
+            mainTable.getColumnModel().getColumn(4).setMaxWidth(30);
+            mainTable.getColumnModel().getColumn(5).setMinWidth(30);
+            mainTable.getColumnModel().getColumn(5).setMaxWidth(30);
+        }
 
         AddSub.setText("Adicionar Mensalista");
         AddSub.setPreferredSize(new java.awt.Dimension(70, 20));
@@ -741,7 +822,7 @@ public class MainMenu extends javax.swing.JFrame {
     private void AddVeicDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddVeicDialogConfirmButtonActionPerformed
         // TODO add your handling code here:
         VeiculeClass veic = new VeiculeClass();
-        veic.setLicense(AddVeicDialogLicense.getText());
+        veic.setLicense(AddVeicDialogLicense.getText().toUpperCase());
         if(AddVeicDialogManualTime.getText() == null || "".equals(AddVeicDialogManualTime.getText())){
             veic.setAutoTimeIn();
         }
@@ -767,16 +848,19 @@ public class MainMenu extends javax.swing.JFrame {
         
         
         veiculeList.add(veic);
-        
+        this.updateTable();
+        /*int aux = 1;
         for(int i = 0; i<veiculeList.size(); i = i+1){
-            mainTable.setValueAt(veiculeList.get(i).getLicense().toUpperCase(), i, 0);
-            mainTable.setValueAt(veiculeList.get(i).getTimeIn(), i, 1);
-            mainTable.setValueAt(veiculeList.get(i).getTimeOut(), i, 2);
-            mainTable.setValueAt(veiculeList.get(i).getIsSubscriber(), i, 3);
-            mainTable.setValueAt(veiculeList.get(i).getHasKey(), i, 4);
             
+            mainTable.setValueAt(aux, i, 0);
+            mainTable.setValueAt(veiculeList.get(i).getLicense().toUpperCase(), i, 1);
+            mainTable.setValueAt(veiculeList.get(i).getTimeIn(), i, 2);
+            mainTable.setValueAt(veiculeList.get(i).getTimeOut(), i, 3);
+            mainTable.setValueAt(veiculeList.get(i).getIsSubscriber(), i, 4);
+            mainTable.setValueAt(veiculeList.get(i).getHasKey(), i, 5);
             
-        }
+            aux = aux + 1;
+        }*/
         System.out.println(veiculeList.get(0).getLicense() + " " + veiculeList.get(0).getTimeIn() + " " + veiculeList.get(0).getIsSubscriber().toString() + " " + veiculeList.get(0).getHasKey().toString() );
         
         AddVeicDialog.dispose();
@@ -866,24 +950,28 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         
         
-        SubscriberView.setVisible(true);
         
+        SubscriberView.setVisible(true);
+        this.updateTable();
+        /*
+        int aux = 1;
         for(int i = 0; i<subscriberList.size(); i = i+1){
             subscriberList.get(i).setAutoIsMensalist();
-            SubTable.setValueAt(subscriberList.get(i).getName(), i, 0);
-            SubTable.setValueAt(subscriberList.get(i).getContact(), i, 1);
-            SubTable.setValueAt(subscriberList.get(i).getLicense().toUpperCase(), i, 2);
-            SubTable.setValueAt(subscriberList.get(i).getCarModel(), i, 3);
-            SubTable.setValueAt(subscriberList.get(i).getWeekDays(), i, 4);
-            SubTable.setValueAt(subscriberList.get(i).getSubscriptionDate(), i, 5);
-            SubTable.setValueAt(subscriberList.get(i).getSubscriptionDeadLine(), i, 6);
-            SubTable.setValueAt(subscriberList.get(i).getIsMensalist(), i, 7);
             
+            SubTable.setValueAt(aux, i, 0);
+            SubTable.setValueAt(subscriberList.get(i).getName(), i, 1);
+            SubTable.setValueAt(subscriberList.get(i).getContact(), i, 2);
+            SubTable.setValueAt(subscriberList.get(i).getLicense().toUpperCase(), i, 3);
+            SubTable.setValueAt(subscriberList.get(i).getCarModel(), i, 4);
+            SubTable.setValueAt(subscriberList.get(i).getWeekDays(), i, 5);
+            SubTable.setValueAt(subscriberList.get(i).getSubscriptionDate(), i, 6);
+            SubTable.setValueAt(subscriberList.get(i).getSubscriptionDeadLine(), i, 7);
+            SubTable.setValueAt(subscriberList.get(i).getIsMensalist(), i, 8);
             
+            aux = aux+1;
             
         }
-        
-        
+        */
         
         
         
@@ -898,12 +986,62 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_RemoveSubActionPerformed
 
     private void RemoveVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveVeicActionPerformed
+        //var db = new DataBaseManagement();
+        RemoveVeicDialog.setLocation(DesktopPane.getLocationOnScreen());
+        RemoveVeicDialog.setVisible(true);
+        for(int i = 0; i<veiculeList.size(); i = i+1){
+            if(veiculeList.get(i).getTimeOut() == null){
+                RemoveVeicDialogComboBox.addItem(veiculeList.get(i).getLicense());
+            }
+        
+        }
+        RemoveVeicDialog.addWindowListener(new java.awt.event.WindowAdapter(){
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e){
+                RemoveVeicDialogComboBox.removeAllItems();
+                RemoveVeicDialog.dispose();
+                
+            }
+        });
+        
+        
+        
+        
+        
         // TODO add your handling code here:
     }//GEN-LAST:event_RemoveVeicActionPerformed
 
     private void EditMenuEditVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditMenuEditVeicActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EditMenuEditVeicActionPerformed
+
+    private void RemoveVeicDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveVeicDialogConfirmButtonActionPerformed
+        // TODO add your handling code here:
+        String aux = RemoveVeicDialogComboBox.getSelectedItem().toString();
+        int auxint = RemoveVeicDialogComboBox.getSelectedIndex();
+        
+        
+        if(aux.equals(veiculeList.get(auxint).getLicense())){
+            veiculeList.get(auxint).setAutoTimeOut();
+        }
+        else{
+            int i = 0;
+            while(!aux.equals(veiculeList.get(i).getLicense())){
+                i = i+1;
+            }
+            veiculeList.get(i).setAutoTimeOut();
+        }
+        
+        RemoveVeicDialogComboBox.removeAllItems();
+        RemoveVeicDialog.dispose();
+        
+        this.updateTable();
+        
+    }//GEN-LAST:event_RemoveVeicDialogConfirmButtonActionPerformed
+
+    private void RemoveVeicDialogComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveVeicDialogComboBoxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RemoveVeicDialogComboBoxActionPerformed
 
     /**
      * @param args the command line arguments
@@ -939,6 +1077,48 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void updateTable(){
+        int aux = 1;
+        for(int i = 0; i<subscriberList.size(); i = i+1){
+            subscriberList.get(i).setAutoIsMensalist();
+            
+            SubTable.setValueAt(aux, i, 0);
+            SubTable.setValueAt(subscriberList.get(i).getName(), i, 1);
+            SubTable.setValueAt(subscriberList.get(i).getContact(), i, 2);
+            SubTable.setValueAt(subscriberList.get(i).getLicense().toUpperCase(), i, 3);
+            SubTable.setValueAt(subscriberList.get(i).getCarModel(), i, 4);
+            SubTable.setValueAt(subscriberList.get(i).getWeekDays(), i, 5);
+            SubTable.setValueAt(subscriberList.get(i).getSubscriptionDate(), i, 6);
+            SubTable.setValueAt(subscriberList.get(i).getSubscriptionDeadLine(), i, 7);
+            SubTable.setValueAt(subscriberList.get(i).getIsMensalist(), i, 8);
+            
+            aux = aux+1;
+            
+        }
+        aux = 1;
+        for(int i = 0; i<veiculeList.size(); i = i+1){
+            
+            mainTable.setValueAt(aux, i, 0);
+            mainTable.setValueAt(veiculeList.get(i).getLicense().toUpperCase(), i, 1);
+            mainTable.setValueAt(veiculeList.get(i).getTimeIn(), i, 2);
+            mainTable.setValueAt(veiculeList.get(i).getTimeOut(), i, 3);
+            mainTable.setValueAt(veiculeList.get(i).getIsSubscriber(), i, 4);
+            mainTable.setValueAt(veiculeList.get(i).getHasKey(), i, 5);
+            
+            aux = aux + 1;
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AddSub;
@@ -972,6 +1152,9 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JButton RemoveSub;
     private javax.swing.JButton RemoveVeic;
+    private javax.swing.JDialog RemoveVeicDialog;
+    private javax.swing.JComboBox<String> RemoveVeicDialogComboBox;
+    private javax.swing.JButton RemoveVeicDialogConfirmButton;
     private javax.swing.JFileChooser SaveLoadDialog;
     private javax.swing.JScrollPane ScrollPaneTable;
     private javax.swing.JTable SubTable;
