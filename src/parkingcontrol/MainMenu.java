@@ -1163,11 +1163,11 @@ public class MainMenu extends javax.swing.JFrame {
         
         
         if(aux.equals(veiculeList.get(auxint).getLicense())){
-            if(RemoveVeicDialogTextField.getText() == null){
+            if("".equals(RemoveVeicDialogTextField.getText())){
                 veiculeList.get(auxint).setAutoTimeOut();
             }
             else{
-                veiculeList.get(auxint).setManualTimeOut(RemoveVeicDialogTextField.getText().toString());
+                veiculeList.get(auxint).setManualTimeOut(RemoveVeicDialogTextField.getText());
             }
         }
             
@@ -1178,11 +1178,11 @@ public class MainMenu extends javax.swing.JFrame {
             while(!aux.equals(veiculeList.get(i).getLicense())){
                 i = i+1;
             }
-            if(RemoveVeicDialogTextField.getText() == null){
+            if("".equals(RemoveVeicDialogTextField.getText())){
                 veiculeList.get(i).setAutoTimeOut();
             }
             else{
-                veiculeList.get(i).setManualTimeOut(RemoveVeicDialogTextField.getText().toString());
+                veiculeList.get(i).setManualTimeOut(RemoveVeicDialogTextField.getText());
             }
         }
         
