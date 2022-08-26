@@ -39,6 +39,7 @@ public class MainMenu extends javax.swing.JFrame {
         AddVeicDialogConfirmButton = new javax.swing.JToggleButton();
         TextPlacaDoVeiculo = new javax.swing.JLabel();
         TextHorarioDeEntrada = new javax.swing.JLabel();
+        AddVeicDialogIsMotorBike = new javax.swing.JCheckBox();
         AddSubDialog = new javax.swing.JDialog();
         AddSubDialogName = new javax.swing.JTextField();
         AddSubDialogLicense = new javax.swing.JTextField();
@@ -56,12 +57,18 @@ public class MainMenu extends javax.swing.JFrame {
         AddSubDialogBox4 = new javax.swing.JCheckBox();
         AddSubDialogBox5 = new javax.swing.JCheckBox();
         AddSubDialogBox6 = new javax.swing.JCheckBox();
+        AddSubDialogIsMotorBike = new javax.swing.JCheckBox();
         SubscriberView = new javax.swing.JDialog();
         jScrollPane1 = new javax.swing.JScrollPane();
         SubTable = new javax.swing.JTable();
         RemoveVeicDialog = new javax.swing.JDialog();
         RemoveVeicDialogConfirmButton = new javax.swing.JButton();
         RemoveVeicDialogComboBox = new javax.swing.JComboBox<>();
+        RemoveVeicDialogTextField = new javax.swing.JTextField();
+        RemoveVeicDialogLabel = new javax.swing.JLabel();
+        RemoveSubDialog = new javax.swing.JDialog();
+        RemoveSubDialogComboBox = new javax.swing.JComboBox<>();
+        RemoveSubDialogConfirmButton = new javax.swing.JButton();
         AddVeic = new javax.swing.JButton();
         ScrollPaneTable = new javax.swing.JScrollPane();
         mainTable = new javax.swing.JTable();
@@ -120,6 +127,8 @@ public class MainMenu extends javax.swing.JFrame {
         TextHorarioDeEntrada.setText("Horário de Entrada");
         TextHorarioDeEntrada.setToolTipText("");
 
+        AddVeicDialogIsMotorBike.setText("Moto");
+
         javax.swing.GroupLayout AddVeicDialogLayout = new javax.swing.GroupLayout(AddVeicDialog.getContentPane());
         AddVeicDialog.getContentPane().setLayout(AddVeicDialogLayout);
         AddVeicDialogLayout.setHorizontalGroup(
@@ -127,6 +136,7 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(AddVeicDialogLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
                 .addGroup(AddVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AddVeicDialogIsMotorBike)
                     .addGroup(AddVeicDialogLayout.createSequentialGroup()
                         .addComponent(AddVeicDialogSubscriber)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -159,7 +169,9 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGroup(AddVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddVeicDialogSubscriber)
                     .addComponent(AddVeicDialogHasKey))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(AddVeicDialogIsMotorBike)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(AddVeicDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
@@ -211,6 +223,8 @@ public class MainMenu extends javax.swing.JFrame {
 
         AddSubDialogBox6.setText("Per-Noite");
 
+        AddSubDialogIsMotorBike.setText("Moto");
+
         javax.swing.GroupLayout AddSubDialogLayout = new javax.swing.GroupLayout(AddSubDialog.getContentPane());
         AddSubDialog.getContentPane().setLayout(AddSubDialogLayout);
         AddSubDialogLayout.setHorizontalGroup(
@@ -234,7 +248,7 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(AddSubDialogTextContact)
                             .addComponent(AddSubDialogTextLicense)
                             .addComponent(AddSubDialogTextName))
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(AddSubDialogLayout.createSequentialGroup()
                         .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(AddSubDialogBox3)
@@ -242,16 +256,15 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(AddSubDialogBox5))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(AddSubDialogLayout.createSequentialGroup()
-                                .addComponent(AddSubDialogBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
-                                .addComponent(AddSubDialogConfirmButton)
-                                .addGap(39, 39, 39))
-                            .addGroup(AddSubDialogLayout.createSequentialGroup()
-                                .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(AddSubDialogBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(AddSubDialogBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(0, 0, Short.MAX_VALUE))))))
+                            .addComponent(AddSubDialogBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(AddSubDialogBox2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(AddSubDialogBox4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 101, Short.MAX_VALUE)
+                        .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AddSubDialogConfirmButton)
+                            .addComponent(AddSubDialogIsMotorBike))
+                        .addGap(31, 31, 31))))
         );
         AddSubDialogLayout.setVerticalGroup(
             AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -277,7 +290,8 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddSubDialogBox1)
-                    .addComponent(AddSubDialogBox2))
+                    .addComponent(AddSubDialogBox2)
+                    .addComponent(AddSubDialogIsMotorBike))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(AddSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AddSubDialogBox3)
@@ -460,6 +474,8 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        RemoveVeicDialogLabel.setText("Hora de Saída (Opcional)");
+
         javax.swing.GroupLayout RemoveVeicDialogLayout = new javax.swing.GroupLayout(RemoveVeicDialog.getContentPane());
         RemoveVeicDialog.getContentPane().setLayout(RemoveVeicDialogLayout);
         RemoveVeicDialogLayout.setHorizontalGroup(
@@ -470,7 +486,11 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(29, 29, 29))
             .addGroup(RemoveVeicDialogLayout.createSequentialGroup()
                 .addGap(22, 22, 22)
-                .addComponent(RemoveVeicDialogComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(RemoveVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(RemoveVeicDialogComboBox, 0, 174, Short.MAX_VALUE)
+                    .addComponent(RemoveVeicDialogTextField))
+                .addGap(39, 39, 39)
+                .addComponent(RemoveVeicDialogLabel)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         RemoveVeicDialogLayout.setVerticalGroup(
@@ -478,9 +498,49 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoveVeicDialogLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(RemoveVeicDialogComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 168, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addGroup(RemoveVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(RemoveVeicDialogTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(RemoveVeicDialogLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 110, Short.MAX_VALUE)
                 .addComponent(RemoveVeicDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20))
+        );
+
+        RemoveSubDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        RemoveSubDialog.setAlwaysOnTop(true);
+        RemoveSubDialog.setMinimumSize(new java.awt.Dimension(400, 300));
+
+        RemoveSubDialogComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
+
+        RemoveSubDialogConfirmButton.setText("Remover");
+        RemoveSubDialogConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RemoveSubDialogConfirmButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout RemoveSubDialogLayout = new javax.swing.GroupLayout(RemoveSubDialog.getContentPane());
+        RemoveSubDialog.getContentPane().setLayout(RemoveSubDialogLayout);
+        RemoveSubDialogLayout.setHorizontalGroup(
+            RemoveSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, RemoveSubDialogLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(RemoveSubDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+            .addGroup(RemoveSubDialogLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addComponent(RemoveSubDialogComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(229, Short.MAX_VALUE))
+        );
+        RemoveSubDialogLayout.setVerticalGroup(
+            RemoveSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(RemoveSubDialogLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addComponent(RemoveSubDialogComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 160, Short.MAX_VALUE)
+                .addComponent(RemoveSubDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(23, 23, 23))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -624,7 +684,7 @@ public class MainMenu extends javax.swing.JFrame {
         DesktopPane.setLayout(DesktopPaneLayout);
         DesktopPaneLayout.setHorizontalGroup(
             DesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 402, Short.MAX_VALUE)
+            .addGap(0, 400, Short.MAX_VALUE)
         );
         DesktopPaneLayout.setVerticalGroup(
             DesktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -735,7 +795,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(RemoveVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(RemoveSub, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(46, Short.MAX_VALUE))
+                .addContainerGap(48, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -752,8 +812,8 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(RemoveSub, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(RemoveVeic, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(DesktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 434, Short.MAX_VALUE)))
-                .addGap(53, 53, 53))
+                        .addComponent(DesktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 442, Short.MAX_VALUE)))
+                .addContainerGap())
         );
 
         getAccessibleContext().setAccessibleDescription("");
@@ -841,7 +901,12 @@ public class MainMenu extends javax.swing.JFrame {
         else{
             veic.setHasKey(false);
         }
-        
+        if(AddVeicDialogIsMotorBike.isSelected()==true){
+            veic.setIsMotorBike(true);
+        }
+        else{
+            veic.setIsMotorBike(false);
+        }
         
         //veic.setIsSubscriber(subscriberList);
         
@@ -919,6 +984,15 @@ public class MainMenu extends javax.swing.JFrame {
         if(AddSubDialogBox6.isSelected() == true){
             aux = aux + "PNT";
         }
+        if(AddSubDialogIsMotorBike.isSelected() == true){
+            sub.setIsMotorBike(true);
+        }
+        else{
+            sub.setIsMotorBike(false);
+        }
+        
+        
+        
         
         sub.setWeekDays(aux);
         sub.setAutoSubscriptionDeadLine();
@@ -983,6 +1057,22 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void RemoveSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveSubActionPerformed
         // TODO add your handling code here:
+        RemoveSubDialog.setLocation(DesktopPane.getLocationOnScreen());
+        RemoveSubDialog.setVisible(true);
+        RemoveSubDialogComboBox.removeAllItems();
+        for(int i = 0; i<subscriberList.size(); i = i+1){
+            RemoveSubDialogComboBox.addItem(subscriberList.get(i).getName());
+            
+        
+        }
+        RemoveSubDialog.addWindowListener(new java.awt.event.WindowAdapter(){
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e){
+                RemoveSubDialogComboBox.removeAllItems();
+                RemoveSubDialog.dispose();
+                
+            }
+        });
     }//GEN-LAST:event_RemoveSubActionPerformed
 
     private void RemoveVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveVeicActionPerformed
@@ -1022,18 +1112,36 @@ public class MainMenu extends javax.swing.JFrame {
         
         
         if(aux.equals(veiculeList.get(auxint).getLicense())){
-            veiculeList.get(auxint).setAutoTimeOut();
+            if(RemoveVeicDialogTextField.getText() == null){
+                veiculeList.get(auxint).setAutoTimeOut();
+            }
+            else{
+                veiculeList.get(auxint).setManualTimeOut(RemoveVeicDialogTextField.getText().toString());
+            }
         }
+            
+                  
+            
         else{
             int i = 0;
             while(!aux.equals(veiculeList.get(i).getLicense())){
                 i = i+1;
             }
-            veiculeList.get(i).setAutoTimeOut();
+            if(RemoveVeicDialogTextField.getText() == null){
+                veiculeList.get(i).setAutoTimeOut();
+            }
+            else{
+                veiculeList.get(i).setManualTimeOut(RemoveVeicDialogTextField.getText().toString());
+            }
         }
+        
+        
+        
         
         RemoveVeicDialogComboBox.removeAllItems();
         RemoveVeicDialog.dispose();
+        
+        
         
         this.updateTable();
         
@@ -1042,6 +1150,35 @@ public class MainMenu extends javax.swing.JFrame {
     private void RemoveVeicDialogComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveVeicDialogComboBoxActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_RemoveVeicDialogComboBoxActionPerformed
+
+    private void RemoveSubDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveSubDialogConfirmButtonActionPerformed
+        // TODO add your handling code here:
+        String aux = RemoveSubDialogComboBox.getSelectedItem().toString();
+        int auxint = RemoveSubDialogComboBox.getSelectedIndex();
+        
+        if(aux.equals(subscriberList.get(auxint).getName())){
+            subscriberList.remove(auxint);
+            //é preciso trabalhar com banco de dados aqui.
+            
+            
+        }
+        else{
+            int i = 0;
+            while(!aux.equals(subscriberList.get(i).getName())){
+                i = i+1;
+            }
+            subscriberList.remove(i);
+        }
+        
+        RemoveSubDialogComboBox.removeAllItems();
+        RemoveSubDialog.dispose();
+        
+        this.clearTable();
+        
+        
+        
+        
+    }//GEN-LAST:event_RemoveSubDialogConfirmButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1080,6 +1217,8 @@ public class MainMenu extends javax.swing.JFrame {
     
     public void updateTable(){
         int aux = 1;
+        
+        
         for(int i = 0; i<subscriberList.size(); i = i+1){
             subscriberList.get(i).setAutoIsMensalist();
             
@@ -1098,7 +1237,7 @@ public class MainMenu extends javax.swing.JFrame {
         }
         aux = 1;
         for(int i = 0; i<veiculeList.size(); i = i+1){
-            
+            veiculeList.get(i).setIsSubscriber(subscriberList);
             mainTable.setValueAt(aux, i, 0);
             mainTable.setValueAt(veiculeList.get(i).getLicense().toUpperCase(), i, 1);
             mainTable.setValueAt(veiculeList.get(i).getTimeIn(), i, 2);
@@ -1109,6 +1248,22 @@ public class MainMenu extends javax.swing.JFrame {
             aux = aux + 1;
         }
         
+        
+    }
+    
+    public void clearTable(){
+        for(int i = 0; i< subscriberList.size()+1; i = i + 1){
+            SubTable.setValueAt(null, i, 0);
+            SubTable.setValueAt(null, i, 1);
+            SubTable.setValueAt(null, i, 2);
+            SubTable.setValueAt(null, i, 3);
+            SubTable.setValueAt(null, i, 4);
+            SubTable.setValueAt(null, i, 5);
+            SubTable.setValueAt(null, i, 6);
+            SubTable.setValueAt(null, i, 7);
+            SubTable.setValueAt(null, i, 8);
+            
+        }
         
         
     }
@@ -1132,6 +1287,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField AddSubDialogCarModel;
     private javax.swing.JButton AddSubDialogConfirmButton;
     private javax.swing.JTextField AddSubDialogContact;
+    private javax.swing.JCheckBox AddSubDialogIsMotorBike;
     private javax.swing.JTextField AddSubDialogLicense;
     private javax.swing.JTextField AddSubDialogName;
     private javax.swing.JLabel AddSubDialogTextCarModel;
@@ -1143,6 +1299,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JDialog AddVeicDialog;
     private javax.swing.JToggleButton AddVeicDialogConfirmButton;
     private javax.swing.JCheckBox AddVeicDialogHasKey;
+    private javax.swing.JCheckBox AddVeicDialogIsMotorBike;
     private javax.swing.JTextField AddVeicDialogLicense;
     private javax.swing.JTextField AddVeicDialogManualTime;
     private javax.swing.JCheckBox AddVeicDialogSubscriber;
@@ -1151,10 +1308,15 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JMenuItem EditMenuEditVeic;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JButton RemoveSub;
+    private javax.swing.JDialog RemoveSubDialog;
+    private javax.swing.JComboBox<String> RemoveSubDialogComboBox;
+    private javax.swing.JButton RemoveSubDialogConfirmButton;
     private javax.swing.JButton RemoveVeic;
     private javax.swing.JDialog RemoveVeicDialog;
     private javax.swing.JComboBox<String> RemoveVeicDialogComboBox;
     private javax.swing.JButton RemoveVeicDialogConfirmButton;
+    private javax.swing.JLabel RemoveVeicDialogLabel;
+    private javax.swing.JTextField RemoveVeicDialogTextField;
     private javax.swing.JFileChooser SaveLoadDialog;
     private javax.swing.JScrollPane ScrollPaneTable;
     private javax.swing.JTable SubTable;

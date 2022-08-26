@@ -21,6 +21,8 @@ public class Subscriber implements Serializable {
     private String      contact;
     private String      license;
     private Boolean     isMensalist = true;
+    private Boolean     isMotorBike = false;
+    
    
     
     
@@ -48,6 +50,10 @@ public class Subscriber implements Serializable {
     }
     public void setIsMensalist(Boolean aux){
         this.isMensalist = aux;
+    }
+    
+    public void setIsMotorBike(boolean aux){
+        this.isMotorBike = aux;
     }
     
     //Getters
@@ -151,6 +157,9 @@ public class Subscriber implements Serializable {
         this.setIsMensalist(true);
     }
     
+    public boolean getIsMotorBike(){
+        return this.isMotorBike;
+    }
     
     
     

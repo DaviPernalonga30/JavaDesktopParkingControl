@@ -20,6 +20,7 @@ public class VeiculeClass implements Serializable{
     private String              timeOut;
     private Boolean             isSubscriber;   //falta getters e setters e comparações.
     private Boolean             hasKey;
+    private Boolean             isMotorBike = false;
     
     
     public void setLicense(String aux){
@@ -84,5 +85,13 @@ public class VeiculeClass implements Serializable{
     
     public Boolean getHasKey(){
         return this.hasKey;
+    }
+    
+    public void setIsMotorBike(boolean aux){
+        this.isMotorBike = aux;
+    }
+    
+    public boolean getIsMotorBike(){
+        return this.isMotorBike;
     }
 }
