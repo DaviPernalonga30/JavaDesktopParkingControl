@@ -5,8 +5,10 @@
 package parkingcontrol;
 
 
+
 import java.io.File;
 import java.util.ArrayList;
+
 
 /**
  *
@@ -19,6 +21,7 @@ public class MainMenu extends javax.swing.JFrame {
      */
     public MainMenu() {
         initComponents();
+        
     }
 
     /**
@@ -69,6 +72,8 @@ public class MainMenu extends javax.swing.JFrame {
         RemoveSubDialog = new javax.swing.JDialog();
         RemoveSubDialogComboBox = new javax.swing.JComboBox<>();
         RemoveSubDialogConfirmButton = new javax.swing.JButton();
+        EditVeicDialog = new javax.swing.JDialog();
+        EditSubDialog = new javax.swing.JDialog();
         AddVeic = new javax.swing.JButton();
         ScrollPaneTable = new javax.swing.JScrollPane();
         mainTable = new javax.swing.JTable();
@@ -543,10 +548,45 @@ public class MainMenu extends javax.swing.JFrame {
                 .addGap(23, 23, 23))
         );
 
+        EditVeicDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        EditVeicDialog.setTitle("Editar veículo");
+        EditVeicDialog.setAlwaysOnTop(true);
+        EditVeicDialog.setMinimumSize(new java.awt.Dimension(400, 300));
+        EditVeicDialog.setResizable(false);
+
+        javax.swing.GroupLayout EditVeicDialogLayout = new javax.swing.GroupLayout(EditVeicDialog.getContentPane());
+        EditVeicDialog.getContentPane().setLayout(EditVeicDialogLayout);
+        EditVeicDialogLayout.setHorizontalGroup(
+            EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        EditVeicDialogLayout.setVerticalGroup(
+            EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        EditSubDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        EditSubDialog.setTitle("Editar mensalista");
+        EditSubDialog.setAlwaysOnTop(true);
+        EditSubDialog.setMinimumSize(new java.awt.Dimension(400, 439));
+        EditSubDialog.setResizable(false);
+
+        javax.swing.GroupLayout EditSubDialogLayout = new javax.swing.GroupLayout(EditSubDialog.getContentPane());
+        EditSubDialog.getContentPane().setLayout(EditSubDialogLayout);
+        EditSubDialogLayout.setHorizontalGroup(
+            EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        EditSubDialogLayout.setVerticalGroup(
+            EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Controle de Veículos");
         setAlwaysOnTop(true);
         setForeground(java.awt.Color.lightGray);
+        setIconImage(img.getImage());
         setMinimumSize(new java.awt.Dimension(800, 700));
         setName("mainMenu"); // NOI18N
         setPreferredSize(new java.awt.Dimension(800, 600));
@@ -759,6 +799,11 @@ public class MainMenu extends javax.swing.JFrame {
         jMenu2.add(EditMenuEditVeic);
 
         EditMenuEditSub.setText("Editar Mensalista");
+        EditMenuEditSub.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditMenuEditSubActionPerformed(evt);
+            }
+        });
         jMenu2.add(EditMenuEditSub);
 
         MenuBar.add(jMenu2);
@@ -1103,6 +1148,12 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void EditMenuEditVeicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditMenuEditVeicActionPerformed
         // TODO add your handling code here:
+        EditVeicDialog.setLocation(DesktopPane.getLocationOnScreen());
+        EditVeicDialog.show();
+        
+        
+        
+        
     }//GEN-LAST:event_EditMenuEditVeicActionPerformed
 
     private void RemoveVeicDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveVeicDialogConfirmButtonActionPerformed
@@ -1179,6 +1230,15 @@ public class MainMenu extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_RemoveSubDialogConfirmButtonActionPerformed
+
+    private void EditMenuEditSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditMenuEditSubActionPerformed
+        // TODO add your handling code here:
+        EditSubDialog.setLocation(DesktopPane.getLocationOnScreen());
+        EditSubDialog.show();
+        
+        
+        
+    }//GEN-LAST:event_EditMenuEditSubActionPerformed
 
     /**
      * @param args the command line arguments
@@ -1306,6 +1366,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JDesktopPane DesktopPane;
     private javax.swing.JMenuItem EditMenuEditSub;
     private javax.swing.JMenuItem EditMenuEditVeic;
+    private javax.swing.JDialog EditSubDialog;
+    private javax.swing.JDialog EditVeicDialog;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JButton RemoveSub;
     private javax.swing.JDialog RemoveSubDialog;
@@ -1337,6 +1399,8 @@ public class MainMenu extends javax.swing.JFrame {
     private ArrayList<VeiculeClass> veiculeList = new ArrayList();
     private ArrayList<Subscriber> subscriberList = new ArrayList();
     private ArrayList<Object> list;
+    private javax.swing.ImageIcon img = new javax.swing.ImageIcon("icons/2dEstacionamento.png");
+    
 
-
+    
 }
