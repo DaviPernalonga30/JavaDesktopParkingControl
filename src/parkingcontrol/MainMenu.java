@@ -73,7 +73,17 @@ public class MainMenu extends javax.swing.JFrame {
         RemoveSubDialogComboBox = new javax.swing.JComboBox<>();
         RemoveSubDialogConfirmButton = new javax.swing.JButton();
         EditVeicDialog = new javax.swing.JDialog();
-        EditSubDialog = new javax.swing.JDialog();
+        EditVeicDialogComboBox = new javax.swing.JComboBox<>();
+        EditVeicDialogConfirmButton = new javax.swing.JButton();
+        EditVeicDialogFieldLicense = new javax.swing.JTextField();
+        EditVeicDialogFieldTimeIn = new javax.swing.JTextField();
+        EditVeicDialogFieldTimeOut = new javax.swing.JTextField();
+        EditVeicDialogTextLicense = new javax.swing.JLabel();
+        EditVeicDialogTextTimeIn = new javax.swing.JLabel();
+        EditVeicDialogTextTimeOut = new javax.swing.JLabel();
+        EditVeicDialogCheckBoxSub = new javax.swing.JCheckBox();
+        EditVeicDialogCheckBoxHasKey = new javax.swing.JCheckBox();
+        EditVeicDialogCheckBoxMoto = new javax.swing.JCheckBox();
         AddVeic = new javax.swing.JButton();
         ScrollPaneTable = new javax.swing.JScrollPane();
         mainTable = new javax.swing.JTable();
@@ -316,6 +326,8 @@ public class MainMenu extends javax.swing.JFrame {
         SubscriberView.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         SubscriberView.setTitle("Tabela de Mensalista");
         SubscriberView.setAlwaysOnTop(true);
+        SubscriberView.setIconImage(null);
+        SubscriberView.setIconImages(null);
         SubscriberView.setMinimumSize(new java.awt.Dimension(800, 480));
 
         SubTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -551,35 +563,99 @@ public class MainMenu extends javax.swing.JFrame {
         EditVeicDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         EditVeicDialog.setTitle("Editar veículo");
         EditVeicDialog.setAlwaysOnTop(true);
-        EditVeicDialog.setMinimumSize(new java.awt.Dimension(400, 300));
+        EditVeicDialog.setMinimumSize(new java.awt.Dimension(400, 350));
         EditVeicDialog.setResizable(false);
+
+        EditVeicDialogConfirmButton.setText("Editar");
+        EditVeicDialogConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditVeicDialogConfirmButtonActionPerformed(evt);
+            }
+        });
+
+        EditVeicDialogFieldLicense.setToolTipText("");
+
+        EditVeicDialogTextLicense.setText("Placa");
+
+        EditVeicDialogTextTimeIn.setText("Horário de entrada");
+
+        EditVeicDialogTextTimeOut.setText("Horário de Saída");
+
+        EditVeicDialogCheckBoxSub.setText("Mensalista");
+
+        EditVeicDialogCheckBoxHasKey.setText("Chave");
+        EditVeicDialogCheckBoxHasKey.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditVeicDialogCheckBoxHasKeyActionPerformed(evt);
+            }
+        });
+
+        EditVeicDialogCheckBoxMoto.setText("Moto");
+        EditVeicDialogCheckBoxMoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditVeicDialogCheckBoxMotoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout EditVeicDialogLayout = new javax.swing.GroupLayout(EditVeicDialog.getContentPane());
         EditVeicDialog.getContentPane().setLayout(EditVeicDialogLayout);
         EditVeicDialogLayout.setHorizontalGroup(
             EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(EditVeicDialogLayout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EditVeicDialogLayout.createSequentialGroup()
+                        .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(EditVeicDialogComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(EditVeicDialogFieldLicense)
+                            .addComponent(EditVeicDialogFieldTimeIn, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE)
+                            .addComponent(EditVeicDialogFieldTimeOut, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
+                        .addGap(18, 18, 18)
+                        .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(EditVeicDialogLayout.createSequentialGroup()
+                                .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(EditVeicDialogTextLicense)
+                                    .addComponent(EditVeicDialogTextTimeIn)
+                                    .addComponent(EditVeicDialogTextTimeOut))
+                                .addContainerGap(153, Short.MAX_VALUE))
+                            .addGroup(EditVeicDialogLayout.createSequentialGroup()
+                                .addComponent(EditVeicDialogCheckBoxHasKey)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(EditVeicDialogLayout.createSequentialGroup()
+                        .addComponent(EditVeicDialogCheckBoxSub)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(EditVeicDialogLayout.createSequentialGroup()
+                        .addComponent(EditVeicDialogCheckBoxMoto)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(EditVeicDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(19, 19, 19))))
         );
         EditVeicDialogLayout.setVerticalGroup(
             EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
-
-        EditSubDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        EditSubDialog.setTitle("Editar mensalista");
-        EditSubDialog.setAlwaysOnTop(true);
-        EditSubDialog.setMinimumSize(new java.awt.Dimension(400, 439));
-        EditSubDialog.setResizable(false);
-
-        javax.swing.GroupLayout EditSubDialogLayout = new javax.swing.GroupLayout(EditSubDialog.getContentPane());
-        EditSubDialog.getContentPane().setLayout(EditSubDialogLayout);
-        EditSubDialogLayout.setHorizontalGroup(
-            EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        EditSubDialogLayout.setVerticalGroup(
-            EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(EditVeicDialogLayout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(EditVeicDialogComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditVeicDialogFieldLicense, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditVeicDialogTextLicense))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditVeicDialogFieldTimeIn, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditVeicDialogTextTimeIn))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditVeicDialogFieldTimeOut, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditVeicDialogTextTimeOut))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditVeicDialogCheckBoxSub)
+                    .addComponent(EditVeicDialogCheckBoxHasKey, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EditVeicDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditVeicDialogCheckBoxMoto, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1150,10 +1226,26 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
         EditVeicDialog.setLocation(DesktopPane.getLocationOnScreen());
         EditVeicDialog.show();
+        EditVeicDialogComboBox.removeAllItems();
+        for(int i = 0; i<veiculeList.size(); i = i+1){
         
+                EditVeicDialogComboBox.addItem(veiculeList.get(i).getLicense());    
+        }
+        EditVeicDialog.addWindowListener(new java.awt.event.WindowAdapter(){
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e){
+                EditVeicDialogComboBox.removeAllItems();
+                EditVeicDialog.dispose();
+                
+            }
+        });
         
-        
-        
+        EditVeicDialogFieldLicense.setText("");        
+        EditVeicDialogFieldTimeIn.setText("");
+        EditVeicDialogFieldTimeOut.setText("");
+        EditVeicDialogCheckBoxSub.setSelected(false);
+        EditVeicDialogCheckBoxHasKey.setSelected(false);
+        EditVeicDialogCheckBoxMoto.setSelected(false);
     }//GEN-LAST:event_EditMenuEditVeicActionPerformed
 
     private void RemoveVeicDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveVeicDialogConfirmButtonActionPerformed
@@ -1233,47 +1325,61 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void EditMenuEditSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditMenuEditSubActionPerformed
         // TODO add your handling code here:
-        EditSubDialog.setLocation(DesktopPane.getLocationOnScreen());
-        EditSubDialog.show();
-        
+                
         
         
     }//GEN-LAST:event_EditMenuEditSubActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
+    private void EditVeicDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditVeicDialogConfirmButtonActionPerformed
+        // TODO add your handling code here:
+        String aux = EditVeicDialogComboBox.getSelectedItem().toString();
+        int auxint = EditVeicDialogComboBox.getSelectedIndex();
+        
+        
+        if(aux.equals(veiculeList.get(auxint).getLicense())){
+            if(!"".equals(EditVeicDialogFieldLicense.getText())){
+                veiculeList.get(auxint).setLicense(EditVeicDialogFieldLicense.getText());
+                
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MainMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            if(!"".equals(EditVeicDialogFieldTimeIn.getText())){
+                veiculeList.get(auxint).setManualTimeIn(EditVeicDialogFieldTimeIn.getText());
+                
+            }
+            if(!"".equals(EditVeicDialogFieldTimeOut.getText())){
+                veiculeList.get(auxint).setManualTimeOut(EditVeicDialogFieldTimeOut.getText());
+                
+            }
+            
         }
-        //</editor-fold>
+        
+        EditVeicDialog.dispose();
+        
+        EditVeicDialogComboBox.removeAllItems();
+        this.updateTable();
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }//GEN-LAST:event_EditVeicDialogConfirmButtonActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new MainMenu().setVisible(true);
-            }
-        });
-    }
+    private void EditVeicDialogCheckBoxMotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditVeicDialogCheckBoxMotoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditVeicDialogCheckBoxMotoActionPerformed
+
+    private void EditVeicDialogCheckBoxHasKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditVeicDialogCheckBoxHasKeyActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditVeicDialogCheckBoxHasKeyActionPerformed
+    
+    
+    
+    
     
     public void updateTable(){
         int aux = 1;
@@ -1366,8 +1472,18 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JDesktopPane DesktopPane;
     private javax.swing.JMenuItem EditMenuEditSub;
     private javax.swing.JMenuItem EditMenuEditVeic;
-    private javax.swing.JDialog EditSubDialog;
     private javax.swing.JDialog EditVeicDialog;
+    private javax.swing.JCheckBox EditVeicDialogCheckBoxHasKey;
+    private javax.swing.JCheckBox EditVeicDialogCheckBoxMoto;
+    private javax.swing.JCheckBox EditVeicDialogCheckBoxSub;
+    private javax.swing.JComboBox<String> EditVeicDialogComboBox;
+    private javax.swing.JButton EditVeicDialogConfirmButton;
+    private javax.swing.JTextField EditVeicDialogFieldLicense;
+    private javax.swing.JTextField EditVeicDialogFieldTimeIn;
+    private javax.swing.JTextField EditVeicDialogFieldTimeOut;
+    private javax.swing.JLabel EditVeicDialogTextLicense;
+    private javax.swing.JLabel EditVeicDialogTextTimeIn;
+    private javax.swing.JLabel EditVeicDialogTextTimeOut;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JButton RemoveSub;
     private javax.swing.JDialog RemoveSubDialog;

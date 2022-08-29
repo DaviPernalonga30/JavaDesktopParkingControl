@@ -16,6 +16,7 @@ import java.util.Calendar;
 public class VeiculeClass implements Serializable{
     private SimpleDateFormat    formatter;
     private String              license;
+    private String              date;
     private String              timeIn;
     private String              timeOut;
     private Boolean             isSubscriber;   //falta getters e setters e comparações.
@@ -94,4 +95,15 @@ public class VeiculeClass implements Serializable{
     public boolean getIsMotorBike(){
         return this.isMotorBike;
     }
+    
+    public void setDate(){
+        formatter = new SimpleDateFormat("dd:MM:yyyy");
+        this.date = formatter.format(Calendar.getInstance().getTime());
+    }
+    
+    public String getDate(){
+        return this.date;
+    }
+    
+    
 }
