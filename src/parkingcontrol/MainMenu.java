@@ -84,6 +84,29 @@ public class MainMenu extends javax.swing.JFrame {
         EditVeicDialogCheckBoxSub = new javax.swing.JCheckBox();
         EditVeicDialogCheckBoxHasKey = new javax.swing.JCheckBox();
         EditVeicDialogCheckBoxMoto = new javax.swing.JCheckBox();
+        EditSubDialog = new javax.swing.JDialog();
+        EditSubDialogComboBox = new javax.swing.JComboBox<>();
+        EditSubDialogFieldName = new javax.swing.JTextField();
+        EditSubDialogFieldCarModel = new javax.swing.JTextField();
+        EditSubDialogFieldSubDate = new javax.swing.JTextField();
+        EditSubDialogFieldSubDeadLine = new javax.swing.JTextField();
+        EditSubDialogFieldContact = new javax.swing.JTextField();
+        EditSubDialogFieldLicense = new javax.swing.JTextField();
+        EditSubDialogCheckBoxIsMensalist = new javax.swing.JCheckBox();
+        EditSubDialogCheckBoxSegIsMoto = new javax.swing.JCheckBox();
+        EditSubDialogCheckBoxQua = new javax.swing.JCheckBox();
+        EditSubDialogCheckBoxQui = new javax.swing.JCheckBox();
+        EditSubDialogCheckBoxSex = new javax.swing.JCheckBox();
+        EditSubDialogCheckBoxPNT = new javax.swing.JCheckBox();
+        EditSubDialogCheckBoxSeg = new javax.swing.JCheckBox();
+        EditSubDialogCheckBoxTer = new javax.swing.JCheckBox();
+        EditSubDialogConfirmButton = new javax.swing.JButton();
+        EditSubDIalogLabelContact = new javax.swing.JLabel();
+        EditSubDIalogLabelLicense = new javax.swing.JLabel();
+        EditSubDIalogLabelName = new javax.swing.JLabel();
+        EditSubDIalogLabelCarModel = new javax.swing.JLabel();
+        EditSubDIalogLabelSubDate = new javax.swing.JLabel();
+        EditSubDIalogLabelSubDeadLine = new javax.swing.JLabel();
         AddVeic = new javax.swing.JButton();
         ScrollPaneTable = new javax.swing.JScrollPane();
         mainTable = new javax.swing.JTable();
@@ -108,7 +131,7 @@ public class MainMenu extends javax.swing.JFrame {
         AddVeicDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         AddVeicDialog.setTitle("Adicionar Veículo");
         AddVeicDialog.setAlwaysOnTop(true);
-        AddVeicDialog.setIconImage(null);
+        AddVeicDialog.setIconImage(img.getImage());
         AddVeicDialog.setLocation(DesktopPane.location());
         AddVeicDialog.setMinimumSize(new java.awt.Dimension(400, 300));
         AddVeicDialog.setResizable(false);
@@ -194,6 +217,7 @@ public class MainMenu extends javax.swing.JFrame {
         AddSubDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         AddSubDialog.setTitle("Adicionar Mensalista");
         AddSubDialog.setAlwaysOnTop(true);
+        AddSubDialog.setIconImage(img.getImage());
         AddSubDialog.setMinimumSize(new java.awt.Dimension(400, 439));
         AddSubDialog.setName("AddSubDialog"); // NOI18N
 
@@ -326,7 +350,7 @@ public class MainMenu extends javax.swing.JFrame {
         SubscriberView.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         SubscriberView.setTitle("Tabela de Mensalista");
         SubscriberView.setAlwaysOnTop(true);
-        SubscriberView.setIconImage(null);
+        SubscriberView.setIconImage(img.getImage());
         SubscriberView.setIconImages(null);
         SubscriberView.setMinimumSize(new java.awt.Dimension(800, 480));
 
@@ -474,6 +498,7 @@ public class MainMenu extends javax.swing.JFrame {
         RemoveVeicDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
         RemoveVeicDialog.setTitle("Remover Veículo");
         RemoveVeicDialog.setAlwaysOnTop(true);
+        RemoveVeicDialog.setIconImage(img.getImage());
         RemoveVeicDialog.setMinimumSize(new java.awt.Dimension(400, 300));
         RemoveVeicDialog.setResizable(false);
 
@@ -526,6 +551,7 @@ public class MainMenu extends javax.swing.JFrame {
 
         RemoveSubDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         RemoveSubDialog.setAlwaysOnTop(true);
+        RemoveSubDialog.setIconImage(img.getImage());
         RemoveSubDialog.setMinimumSize(new java.awt.Dimension(400, 300));
 
         RemoveSubDialogComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { " " }));
@@ -563,6 +589,7 @@ public class MainMenu extends javax.swing.JFrame {
         EditVeicDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         EditVeicDialog.setTitle("Editar veículo");
         EditVeicDialog.setAlwaysOnTop(true);
+        EditVeicDialog.setIconImage(img.getImage());
         EditVeicDialog.setMinimumSize(new java.awt.Dimension(400, 350));
         EditVeicDialog.setResizable(false);
 
@@ -612,15 +639,11 @@ public class MainMenu extends javax.swing.JFrame {
                             .addComponent(EditVeicDialogFieldTimeOut, javax.swing.GroupLayout.DEFAULT_SIZE, 105, Short.MAX_VALUE))
                         .addGap(18, 18, 18)
                         .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(EditVeicDialogLayout.createSequentialGroup()
-                                .addGroup(EditVeicDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(EditVeicDialogTextLicense)
-                                    .addComponent(EditVeicDialogTextTimeIn)
-                                    .addComponent(EditVeicDialogTextTimeOut))
-                                .addContainerGap(153, Short.MAX_VALUE))
-                            .addGroup(EditVeicDialogLayout.createSequentialGroup()
-                                .addComponent(EditVeicDialogCheckBoxHasKey)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(EditVeicDialogTextLicense)
+                            .addComponent(EditVeicDialogTextTimeIn)
+                            .addComponent(EditVeicDialogTextTimeOut)
+                            .addComponent(EditVeicDialogCheckBoxHasKey))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(EditVeicDialogLayout.createSequentialGroup()
                         .addComponent(EditVeicDialogCheckBoxSub)
                         .addGap(0, 0, Short.MAX_VALUE))
@@ -658,7 +681,174 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(19, Short.MAX_VALUE))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        EditSubDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        EditSubDialog.setTitle("Editar Mensalista");
+        EditSubDialog.setAlwaysOnTop(true);
+        EditSubDialog.setForeground(java.awt.Color.darkGray);
+        EditSubDialog.setIconImage(img.getImage());
+        EditSubDialog.setMinimumSize(new java.awt.Dimension(410, 400));
+        EditSubDialog.setName("EditSubDialog"); // NOI18N
+        EditSubDialog.setResizable(false);
+
+        EditSubDialogFieldContact.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditSubDialogFieldContactActionPerformed(evt);
+            }
+        });
+
+        EditSubDialogCheckBoxIsMensalist.setText("Mensalista");
+        EditSubDialogCheckBoxIsMensalist.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditSubDialogCheckBoxIsMensalistActionPerformed(evt);
+            }
+        });
+
+        EditSubDialogCheckBoxSegIsMoto.setText("Moto");
+
+        EditSubDialogCheckBoxQua.setText("Qua");
+        EditSubDialogCheckBoxQua.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditSubDialogCheckBoxQuaActionPerformed(evt);
+            }
+        });
+
+        EditSubDialogCheckBoxQui.setText("Qui");
+
+        EditSubDialogCheckBoxSex.setText("Sex");
+        EditSubDialogCheckBoxSex.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditSubDialogCheckBoxSexActionPerformed(evt);
+            }
+        });
+
+        EditSubDialogCheckBoxPNT.setText("PNT");
+
+        EditSubDialogCheckBoxSeg.setText("Seg");
+
+        EditSubDialogCheckBoxTer.setText("Ter");
+        EditSubDialogCheckBoxTer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditSubDialogCheckBoxTerActionPerformed(evt);
+            }
+        });
+
+        EditSubDialogConfirmButton.setText("Confirmar");
+        EditSubDialogConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditSubDialogConfirmButtonActionPerformed(evt);
+            }
+        });
+
+        EditSubDIalogLabelContact.setText("Contato");
+
+        EditSubDIalogLabelLicense.setText("Placa");
+
+        EditSubDIalogLabelName.setText("Nome");
+
+        EditSubDIalogLabelCarModel.setText("Modelo do carro");
+
+        EditSubDIalogLabelSubDate.setText("Data de início");
+
+        EditSubDIalogLabelSubDeadLine.setText("Data final");
+
+        javax.swing.GroupLayout EditSubDialogLayout = new javax.swing.GroupLayout(EditSubDialog.getContentPane());
+        EditSubDialog.getContentPane().setLayout(EditSubDialogLayout);
+        EditSubDialogLayout.setHorizontalGroup(
+            EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EditSubDialogLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(EditSubDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(24, 24, 24))
+            .addGroup(EditSubDialogLayout.createSequentialGroup()
+                .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(EditSubDialogLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EditSubDialogFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(EditSubDialogFieldSubDate, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(EditSubDialogFieldCarModel, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(5, 5, 5)
+                        .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EditSubDIalogLabelSubDate)
+                            .addComponent(EditSubDIalogLabelCarModel)
+                            .addComponent(EditSubDIalogLabelName))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EditSubDialogFieldSubDeadLine, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EditSubDialogFieldLicense, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EditSubDialogFieldContact, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EditSubDIalogLabelContact)
+                            .addComponent(EditSubDIalogLabelLicense)
+                            .addComponent(EditSubDIalogLabelSubDeadLine)))
+                    .addGroup(EditSubDialogLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(EditSubDialogCheckBoxQua)
+                        .addGap(18, 18, 18)
+                        .addComponent(EditSubDialogCheckBoxPNT))
+                    .addGroup(EditSubDialogLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EditSubDialogCheckBoxSeg)
+                            .addComponent(EditSubDialogCheckBoxTer))
+                        .addGap(18, 18, 18)
+                        .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EditSubDialogCheckBoxSex)
+                            .addComponent(EditSubDialogCheckBoxQui))
+                        .addGap(101, 101, 101)
+                        .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(EditSubDialogCheckBoxIsMensalist)
+                            .addComponent(EditSubDialogCheckBoxSegIsMoto)))
+                    .addGroup(EditSubDialogLayout.createSequentialGroup()
+                        .addGap(145, 145, 145)
+                        .addComponent(EditSubDialogComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        EditSubDialogLayout.setVerticalGroup(
+            EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EditSubDialogLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(EditSubDialogComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditSubDialogFieldName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditSubDialogFieldSubDeadLine, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditSubDIalogLabelName)
+                    .addComponent(EditSubDIalogLabelSubDeadLine))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditSubDialogFieldCarModel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditSubDialogFieldContact, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditSubDIalogLabelContact)
+                    .addComponent(EditSubDIalogLabelCarModel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditSubDialogFieldSubDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditSubDialogFieldLicense, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(EditSubDIalogLabelLicense)
+                    .addComponent(EditSubDIalogLabelSubDate))
+                .addGap(42, 42, 42)
+                .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditSubDialogCheckBoxIsMensalist)
+                    .addComponent(EditSubDialogCheckBoxQui)
+                    .addComponent(EditSubDialogCheckBoxSeg))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditSubDialogCheckBoxSegIsMoto)
+                    .addComponent(EditSubDialogCheckBoxSex)
+                    .addComponent(EditSubDialogCheckBoxTer))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(EditSubDialogCheckBoxQua)
+                    .addComponent(EditSubDialogCheckBoxPNT))
+                .addGap(18, 18, 18)
+                .addComponent(EditSubDialogConfirmButton, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(34, Short.MAX_VALUE))
+        );
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Controle de Veículos");
         setAlwaysOnTop(true);
         setForeground(java.awt.Color.lightGray);
@@ -1088,19 +1278,19 @@ public class MainMenu extends javax.swing.JFrame {
         
         //CheckBox ifs
         if(AddSubDialogBox1.isSelected() == true){
-            aux = aux + "Seg ";
+            aux = aux + "Seg";
         }
         if(AddSubDialogBox2.isSelected() == true){
-            aux = aux + "Ter ";
+            aux = aux + "Ter";
         }
         if(AddSubDialogBox3.isSelected() == true){
-            aux = aux + "Qua ";
+            aux = aux + "Qua";
         }
         if(AddSubDialogBox4.isSelected() == true){
-            aux = aux + "Qui ";
+            aux = aux + "Qui";
         }
         if(AddSubDialogBox5.isSelected() == true){
-            aux = aux + "Sex ";
+            aux = aux + "Sex";
         }
         if(AddSubDialogBox6.isSelected() == true){
             aux = aux + "PNT";
@@ -1135,8 +1325,8 @@ public class MainMenu extends javax.swing.JFrame {
         AddSubDialogBox4.setSelected(false);
         AddSubDialogBox5.setSelected(false);
         AddSubDialogBox6.setSelected(false);
-        
-        
+        var db = new DataBaseManagement();
+        db.insertIntoSubscriber(sub);
         
         
     }//GEN-LAST:event_AddSubDialogConfirmButtonActionPerformed
@@ -1325,7 +1515,34 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void EditMenuEditSubActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditMenuEditSubActionPerformed
         // TODO add your handling code here:
+        EditSubDialog.setLocation(DesktopPane.getLocationOnScreen());
+        EditSubDialog.show();
+        EditSubDialogComboBox.removeAllItems();
+        for(int i = 0; i<subscriberList.size(); i = i+1){
+        
+                EditSubDialogComboBox.addItem(subscriberList.get(i).getName());    
+        }
+        EditSubDialog.addWindowListener(new java.awt.event.WindowAdapter(){
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e){
+                EditSubDialogComboBox.removeAllItems();
+                EditSubDialog.dispose();
                 
+            }
+        });
+        
+        
+        
+        
+        EditSubDialogFieldName.setText("");
+        EditSubDialogFieldCarModel.setText("");
+        EditSubDialogFieldSubDate.setText("");
+        EditSubDialogFieldSubDeadLine.setText("");
+        EditSubDialogFieldContact.setText("");
+        EditSubDialogFieldLicense.setText("");
+        EditSubDialogCheckBoxSeg.setSelected(false);
+        
+        
         
         
     }//GEN-LAST:event_EditMenuEditSubActionPerformed
@@ -1376,6 +1593,30 @@ public class MainMenu extends javax.swing.JFrame {
     private void EditVeicDialogCheckBoxHasKeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditVeicDialogCheckBoxHasKeyActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_EditVeicDialogCheckBoxHasKeyActionPerformed
+
+    private void EditSubDialogCheckBoxIsMensalistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogCheckBoxIsMensalistActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditSubDialogCheckBoxIsMensalistActionPerformed
+
+    private void EditSubDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogConfirmButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditSubDialogConfirmButtonActionPerformed
+
+    private void EditSubDialogCheckBoxQuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogCheckBoxQuaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditSubDialogCheckBoxQuaActionPerformed
+
+    private void EditSubDialogCheckBoxSexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogCheckBoxSexActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditSubDialogCheckBoxSexActionPerformed
+
+    private void EditSubDialogCheckBoxTerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogCheckBoxTerActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditSubDialogCheckBoxTerActionPerformed
+
+    private void EditSubDialogFieldContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogFieldContactActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_EditSubDialogFieldContactActionPerformed
     
     
     
@@ -1435,6 +1676,17 @@ public class MainMenu extends javax.swing.JFrame {
     }
     
     
+    public void multipageTable(){
+        if(subscriberList.size()<100){
+            return;
+        }
+        else{
+            //fazer a logica para mudar de pagina da tabela aqui
+            //bem complicado isso.
+        }
+    }
+    
+    
     
     
     
@@ -1472,6 +1724,29 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JDesktopPane DesktopPane;
     private javax.swing.JMenuItem EditMenuEditSub;
     private javax.swing.JMenuItem EditMenuEditVeic;
+    private javax.swing.JLabel EditSubDIalogLabelCarModel;
+    private javax.swing.JLabel EditSubDIalogLabelContact;
+    private javax.swing.JLabel EditSubDIalogLabelLicense;
+    private javax.swing.JLabel EditSubDIalogLabelName;
+    private javax.swing.JLabel EditSubDIalogLabelSubDate;
+    private javax.swing.JLabel EditSubDIalogLabelSubDeadLine;
+    private javax.swing.JDialog EditSubDialog;
+    private javax.swing.JCheckBox EditSubDialogCheckBoxIsMensalist;
+    private javax.swing.JCheckBox EditSubDialogCheckBoxPNT;
+    private javax.swing.JCheckBox EditSubDialogCheckBoxQua;
+    private javax.swing.JCheckBox EditSubDialogCheckBoxQui;
+    private javax.swing.JCheckBox EditSubDialogCheckBoxSeg;
+    private javax.swing.JCheckBox EditSubDialogCheckBoxSegIsMoto;
+    private javax.swing.JCheckBox EditSubDialogCheckBoxSex;
+    private javax.swing.JCheckBox EditSubDialogCheckBoxTer;
+    private javax.swing.JComboBox<String> EditSubDialogComboBox;
+    private javax.swing.JButton EditSubDialogConfirmButton;
+    private javax.swing.JTextField EditSubDialogFieldCarModel;
+    private javax.swing.JTextField EditSubDialogFieldContact;
+    private javax.swing.JTextField EditSubDialogFieldLicense;
+    private javax.swing.JTextField EditSubDialogFieldName;
+    private javax.swing.JTextField EditSubDialogFieldSubDate;
+    private javax.swing.JTextField EditSubDialogFieldSubDeadLine;
     private javax.swing.JDialog EditVeicDialog;
     private javax.swing.JCheckBox EditVeicDialogCheckBoxHasKey;
     private javax.swing.JCheckBox EditVeicDialogCheckBoxMoto;

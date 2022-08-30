@@ -86,7 +86,7 @@ public class Subscriber implements Serializable {
     public void setAutoSubscriptionDate(){
         String aux;
         SimpleDateFormat formatter;
-        formatter = new SimpleDateFormat("dd/MM/yyyy");
+        formatter = new SimpleDateFormat("dd-MM-yyyy");
         aux = formatter.format(Calendar.getInstance().getTime());
         this.setManualSubscriptionDate(aux);
     }
@@ -114,7 +114,7 @@ public class Subscriber implements Serializable {
             aux3 = "0" + String.valueOf(auxint1);
         }
         
-        aux = aux2+ "/" + aux3 + "/" + String.valueOf(auxint2);
+        aux = aux2+ "-" + aux3 + "-" + String.valueOf(auxint2);
         this.setManualSubscriptionDeadLine(aux);
         
         
