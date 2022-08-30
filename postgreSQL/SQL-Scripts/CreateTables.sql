@@ -35,4 +35,8 @@ CREATE TABLE IF NOT EXISTS public.veicule
 TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.veicule
-    OWNER to postgres;    
+    OWNER to postgres;
+
+
+    
+        
