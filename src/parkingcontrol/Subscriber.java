@@ -22,6 +22,7 @@ public class Subscriber implements Serializable {
     private String      license;
     private Boolean     isMensalist = true;
     private Boolean     isMotorBike = false;
+    private int         postgresId;
     
    
     
@@ -55,6 +56,10 @@ public class Subscriber implements Serializable {
     public void setIsMotorBike(boolean aux){
         this.isMotorBike = aux;
     }
+    public void setPostgresId(int aux){
+        this.postgresId = aux;
+    }
+    
     
     //Getters
     public String getName(){
@@ -86,7 +91,7 @@ public class Subscriber implements Serializable {
     public void setAutoSubscriptionDate(){
         String aux;
         SimpleDateFormat formatter;
-        formatter = new SimpleDateFormat("dd-MM-yyyy");
+        formatter = new SimpleDateFormat("dd/MM/yyyy");
         aux = formatter.format(Calendar.getInstance().getTime());
         this.setManualSubscriptionDate(aux);
     }
@@ -114,7 +119,7 @@ public class Subscriber implements Serializable {
             aux3 = "0" + String.valueOf(auxint1);
         }
         
-        aux = aux2+ "-" + aux3 + "-" + String.valueOf(auxint2);
+        aux = aux2+ "/" + aux3 + "/" + String.valueOf(auxint2);
         this.setManualSubscriptionDeadLine(aux);
         
         
@@ -161,7 +166,9 @@ public class Subscriber implements Serializable {
         return this.isMotorBike;
     }
     
-    
+    public int getPostgresId(){
+        return this.postgresId;
+    }
     
     
 }

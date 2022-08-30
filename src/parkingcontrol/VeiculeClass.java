@@ -19,7 +19,7 @@ public class VeiculeClass implements Serializable{
     private String              date;
     private String              timeIn;
     private String              timeOut;
-    private Boolean             isSubscriber;   //falta getters e setters e comparações.
+    private Boolean             isSubscriber;   
     private Boolean             hasKey;
     private Boolean             isMotorBike = false;
     

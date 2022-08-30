@@ -21,6 +21,8 @@ public class MainMenu extends javax.swing.JFrame {
      */
     public MainMenu() {
         initComponents();
+        this.db = new DataBaseManagement();
+        subscriberList = db.selectFromSubscriber();
         
     }
 
@@ -1325,8 +1327,8 @@ public class MainMenu extends javax.swing.JFrame {
         AddSubDialogBox4.setSelected(false);
         AddSubDialogBox5.setSelected(false);
         AddSubDialogBox6.setSelected(false);
-        var db = new DataBaseManagement();
-        db.insertIntoSubscriber(sub);
+        
+        this.db.insertIntoSubscriber(sub);
         
         
     }//GEN-LAST:event_AddSubDialogConfirmButtonActionPerformed
@@ -1791,7 +1793,7 @@ public class MainMenu extends javax.swing.JFrame {
     private ArrayList<Subscriber> subscriberList = new ArrayList();
     private ArrayList<Object> list;
     private javax.swing.ImageIcon img = new javax.swing.ImageIcon("icons/2dEstacionamento.png");
-    
+    private DataBaseManagement db;
 
     
 }

@@ -6,6 +6,9 @@ package parkingcontrol;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 /**
@@ -38,20 +41,21 @@ public class DataBaseManagement {
     
     public void insertIntoSubscriber(Subscriber sub){
         String sqlcmd = "INSERT INTO public.subscriber "
-                + "(str_name, str_carmodel, str_initdate, str_enddate, str_license, str_weekdays, bool_ismensalist, bool_ismotorbike) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";        
+                + "(str_name, str_carmodel, str_contact, str_initdate, str_enddate, str_license, str_weekdays, bool_ismensalist, bool_ismotorbike) "
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";        
         
         
         
         try(java.sql.PreparedStatement st = this.con.prepareStatement(sqlcmd)){
             st.setString(1, sub.getName());
             st.setString(2, sub.getCarModel());
-            st.setString(3, sub.getSubscriptionDate());
-            st.setString(4, sub.getSubscriptionDeadLine());
-            st.setString(5, sub.getLicense());
-            st.setString(6, sub.getWeekDays());
-            st.setBoolean(7, sub.getIsMensalist());
-            st.setBoolean(8, sub.getIsMotorBike());
+            st.setString(3, sub.getContact());
+            st.setString(4, sub.getSubscriptionDate());
+            st.setString(5, sub.getSubscriptionDeadLine());
+            st.setString(6, sub.getLicense());
+            st.setString(7, sub.getWeekDays());
+            st.setBoolean(8, sub.getIsMensalist());
+            st.setBoolean(9, sub.getIsMotorBike());
             
             st.executeUpdate();
             
@@ -67,6 +71,56 @@ public class DataBaseManagement {
     
     
     }
+    
+    public java.util.ArrayList selectFromSubscriber(){
+        //depois criar uma regra para que só sejam carregados
+        //aqueles que em 3 meses ainda foram mensalistas.
+        
+        
+        java.util.ArrayList<Subscriber> sublist = new java.util.ArrayList();
+        String query = "SELECT * FROM public.subscriber";
+        
+        try(java.sql.Statement st = this.con.createStatement()){
+            java.sql.ResultSet rs = st.executeQuery(query);
+            while(rs.next()){
+                var sub = new Subscriber();
+                sub.setName(rs.getString("str_name"));
+                sub.setCarModel(rs.getString("str_carmodel"));
+                sub.setContact(rs.getString("str_contact"));
+                sub.setManualSubscriptionDate(rs.getString("str_initdate"));
+                sub.setManualSubscriptionDeadLine(rs.getString("str_enddate"));
+                sub.setLicense(rs.getString("str_license"));
+                sub.setWeekDays(rs.getString("str_weekdays"));
+                sub.setIsMensalist(rs.getBoolean("bool_ismensalist"));
+                sub.setIsMotorBike(rs.getBoolean("bool_ismotorbike"));
+                
+                sublist.add(sub);
+                
+            }
+            
+      
+        } catch (SQLException ex) {
+            Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        return sublist;
+    }
+    
+    
+    public void updateItemFromSubscriber(Subscriber sub){
+        //Criar a regra de update
+        //https://www.javaguides.net/2020/02/java-jdbc-postgresql-update-example.html
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
     
     
 }
