@@ -17,3 +17,22 @@ TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.subscriber
     OWNER to postgres;
+
+
+CREATE TABLE IF NOT EXISTS public.veicule
+(
+    id_veiculo integer NOT NULL DEFAULT nextval('veicule_id_veiculo_seq'::regclass),
+    str_license character varying COLLATE pg_catalog."default",
+    str_timein character varying COLLATE pg_catalog."default",
+    str_timeout character varying COLLATE pg_catalog."default",
+    bool_issubscriber boolean,
+    bool_haskey boolean,
+    bool_ismotorbike boolean,
+    str_date character varying COLLATE pg_catalog."default",
+    CONSTRAINT veicule_pkey PRIMARY KEY (id_veiculo)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.veicule
+    OWNER to postgres;    
