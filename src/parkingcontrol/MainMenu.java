@@ -95,7 +95,7 @@ public class MainMenu extends javax.swing.JFrame {
         EditSubDialogFieldContact = new javax.swing.JTextField();
         EditSubDialogFieldLicense = new javax.swing.JTextField();
         EditSubDialogCheckBoxIsMensalist = new javax.swing.JCheckBox();
-        EditSubDialogCheckBoxSegIsMoto = new javax.swing.JCheckBox();
+        EditSubDialogCheckBoxIsMoto = new javax.swing.JCheckBox();
         EditSubDialogCheckBoxQua = new javax.swing.JCheckBox();
         EditSubDialogCheckBoxQui = new javax.swing.JCheckBox();
         EditSubDialogCheckBoxSex = new javax.swing.JCheckBox();
@@ -358,113 +358,113 @@ public class MainMenu extends javax.swing.JFrame {
 
         SubTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Qntd.", "Nome", "Contato", "Placa", "Modelo do Carro", "Dias", "Dia de Início", "Dia de finalização", "Mensalista"
+                "Qntd.", "Nome", "Contato", "Placa", "Modelo do Carro", "Dias", "Dia de Início", "Dia de finalização", "Mensalista", "Moto"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class, java.lang.Boolean.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -476,8 +476,8 @@ public class MainMenu extends javax.swing.JFrame {
         if (SubTable.getColumnModel().getColumnCount() > 0) {
             SubTable.getColumnModel().getColumn(0).setMinWidth(30);
             SubTable.getColumnModel().getColumn(0).setMaxWidth(30);
-            SubTable.getColumnModel().getColumn(8).setMinWidth(50);
-            SubTable.getColumnModel().getColumn(8).setMaxWidth(50);
+            SubTable.getColumnModel().getColumn(8).setPreferredWidth(35);
+            SubTable.getColumnModel().getColumn(9).setPreferredWidth(35);
         }
 
         javax.swing.GroupLayout SubscriberViewLayout = new javax.swing.GroupLayout(SubscriberView.getContentPane());
@@ -692,47 +692,21 @@ public class MainMenu extends javax.swing.JFrame {
         EditSubDialog.setName("EditSubDialog"); // NOI18N
         EditSubDialog.setResizable(false);
 
-        EditSubDialogFieldContact.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditSubDialogFieldContactActionPerformed(evt);
-            }
-        });
-
         EditSubDialogCheckBoxIsMensalist.setText("Mensalista");
-        EditSubDialogCheckBoxIsMensalist.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditSubDialogCheckBoxIsMensalistActionPerformed(evt);
-            }
-        });
 
-        EditSubDialogCheckBoxSegIsMoto.setText("Moto");
+        EditSubDialogCheckBoxIsMoto.setText("Moto");
 
         EditSubDialogCheckBoxQua.setText("Qua");
-        EditSubDialogCheckBoxQua.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditSubDialogCheckBoxQuaActionPerformed(evt);
-            }
-        });
 
         EditSubDialogCheckBoxQui.setText("Qui");
 
         EditSubDialogCheckBoxSex.setText("Sex");
-        EditSubDialogCheckBoxSex.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditSubDialogCheckBoxSexActionPerformed(evt);
-            }
-        });
 
         EditSubDialogCheckBoxPNT.setText("PNT");
 
         EditSubDialogCheckBoxSeg.setText("Seg");
 
         EditSubDialogCheckBoxTer.setText("Ter");
-        EditSubDialogCheckBoxTer.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                EditSubDialogCheckBoxTerActionPerformed(evt);
-            }
-        });
 
         EditSubDialogConfirmButton.setText("Confirmar");
         EditSubDialogConfirmButton.addActionListener(new java.awt.event.ActionListener() {
@@ -802,7 +776,7 @@ public class MainMenu extends javax.swing.JFrame {
                         .addGap(101, 101, 101)
                         .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(EditSubDialogCheckBoxIsMensalist)
-                            .addComponent(EditSubDialogCheckBoxSegIsMoto)))
+                            .addComponent(EditSubDialogCheckBoxIsMoto)))
                     .addGroup(EditSubDialogLayout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addComponent(EditSubDialogComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -838,7 +812,7 @@ public class MainMenu extends javax.swing.JFrame {
                     .addComponent(EditSubDialogCheckBoxSeg))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(EditSubDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(EditSubDialogCheckBoxSegIsMoto)
+                    .addComponent(EditSubDialogCheckBoxIsMoto)
                     .addComponent(EditSubDialogCheckBoxSex)
                     .addComponent(EditSubDialogCheckBoxTer))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1280,22 +1254,22 @@ public class MainMenu extends javax.swing.JFrame {
         
         //CheckBox ifs
         if(AddSubDialogBox1.isSelected() == true){
-            aux = aux + "Seg";
+            aux = aux + "Seg ";
         }
         if(AddSubDialogBox2.isSelected() == true){
-            aux = aux + "Ter";
+            aux = aux + "Ter ";
         }
         if(AddSubDialogBox3.isSelected() == true){
-            aux = aux + "Qua";
+            aux = aux + "Qua ";
         }
         if(AddSubDialogBox4.isSelected() == true){
-            aux = aux + "Qui";
+            aux = aux + "Qui ";
         }
         if(AddSubDialogBox5.isSelected() == true){
-            aux = aux + "Sex";
+            aux = aux + "Sex ";
         }
         if(AddSubDialogBox6.isSelected() == true){
-            aux = aux + "PNT";
+            aux = aux + "PNT.";
         }
         if(AddSubDialogIsMotorBike.isSelected() == true){
             sub.setIsMotorBike(true);
@@ -1543,7 +1517,13 @@ public class MainMenu extends javax.swing.JFrame {
         EditSubDialogFieldContact.setText("");
         EditSubDialogFieldLicense.setText("");
         EditSubDialogCheckBoxSeg.setSelected(false);
-        
+        EditSubDialogCheckBoxTer.setSelected(false);
+        EditSubDialogCheckBoxQua.setSelected(false);
+        EditSubDialogCheckBoxQui.setSelected(false);
+        EditSubDialogCheckBoxSex.setSelected(false);
+        EditSubDialogCheckBoxPNT.setSelected(false);
+        EditSubDialogCheckBoxIsMensalist.setSelected(false);
+        EditSubDialogCheckBoxIsMoto.setSelected(false);
         
         
         
@@ -1596,29 +1576,90 @@ public class MainMenu extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_EditVeicDialogCheckBoxHasKeyActionPerformed
 
-    private void EditSubDialogCheckBoxIsMensalistActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogCheckBoxIsMensalistActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditSubDialogCheckBoxIsMensalistActionPerformed
-
     private void EditSubDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogConfirmButtonActionPerformed
         // TODO add your handling code here:
+        //Create a update LOG table.
+        Subscriber subOld = new Subscriber();
+        String aux = EditSubDialogComboBox.getSelectedItem().toString();
+        int auxint = EditSubDialogComboBox.getSelectedIndex();
+        if(aux.equals(subscriberList.get(auxint).getName())){
+            subOld.setName(aux);
+        }
+        
+        
+        if(aux.equals(subscriberList.get(auxint).getName())){
+            
+            
+            if(!"".equals(EditSubDialogFieldName.getText())){
+                subscriberList.get(auxint).setName(EditSubDialogFieldName.getText());
+            }
+            if(!"".equals(EditSubDialogFieldCarModel.getText())){
+                subscriberList.get(auxint).setCarModel(EditSubDialogFieldCarModel.getText());
+            }
+            if(!"".equals(EditSubDialogFieldSubDate.getText())){
+                subscriberList.get(auxint).setManualSubscriptionDate(EditSubDialogFieldSubDate.getText());
+                subscriberList.get(auxint).setAutoSubscriptionDeadLine();
+            }
+            if(!"".equals(EditSubDialogFieldSubDeadLine.getText())){
+                subscriberList.get(auxint).setManualSubscriptionDeadLine(EditSubDialogFieldSubDeadLine.getText());
+            }
+            if(!"".equals(EditSubDialogFieldContact.getText())){
+                subscriberList.get(auxint).setContact(EditSubDialogFieldContact.getText());
+            }
+            if(!"".equals(EditSubDialogFieldLicense.getText())){
+                subscriberList.get(auxint).setLicense(EditSubDialogFieldLicense.getText());
+            }
+            
+            //If gigantesco faz com que, qualquer das caixas selecionadas, irá zerar o valor do weekdays
+            //e poderá armazenadr os valores que estão marcados:
+            if(EditSubDialogCheckBoxSeg.isSelected() == true || EditSubDialogCheckBoxTer.isSelected() == true
+            || EditSubDialogCheckBoxQua.isSelected() == true || EditSubDialogCheckBoxQui.isSelected() == true 
+            || EditSubDialogCheckBoxSex.isSelected() == true || EditSubDialogCheckBoxPNT.isSelected() == true){
+                subscriberList.get(auxint).setWeekDays(null);
+                //Inicio dos If de atribuição.
+                String straux = "";
+                
+                if(EditSubDialogCheckBoxSeg.isSelected() == true){
+                straux = straux + "Seg ";
+                }
+                if(EditSubDialogCheckBoxTer.isSelected() == true){
+                straux = straux + "Ter ";
+                }
+                if(EditSubDialogCheckBoxQua.isSelected() == true){
+                straux = straux + "Qua ";
+                }
+                if(EditSubDialogCheckBoxQui.isSelected() == true){
+                straux = straux + "Qui ";
+                }
+                if(EditSubDialogCheckBoxSex.isSelected() == true){
+                straux = straux + "Sex ";
+                }
+                if(EditSubDialogCheckBoxPNT.isSelected() == true){
+                straux = straux + "PNT.";
+                }
+                
+                subscriberList.get(auxint).setWeekDays(straux);
+               
+            }
+            
+            if(EditSubDialogCheckBoxIsMensalist.isSelected() == true){
+                subscriberList.get(auxint).setIsMensalist(true);
+            }
+            
+            if(EditSubDialogCheckBoxIsMoto.isSelected() == true){
+                subscriberList.get(auxint).setIsMotorBike(true);
+            }
+        }
+            
+        
+        EditSubDialog.dispose();
+        
+        EditSubDialogComboBox.removeAllItems();
+        this.updateTable();
+        this.db.updateItemFromSubscriber(subOld, subscriberList.get(auxint));
+
+        
     }//GEN-LAST:event_EditSubDialogConfirmButtonActionPerformed
-
-    private void EditSubDialogCheckBoxQuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogCheckBoxQuaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditSubDialogCheckBoxQuaActionPerformed
-
-    private void EditSubDialogCheckBoxSexActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogCheckBoxSexActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditSubDialogCheckBoxSexActionPerformed
-
-    private void EditSubDialogCheckBoxTerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogCheckBoxTerActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditSubDialogCheckBoxTerActionPerformed
-
-    private void EditSubDialogFieldContactActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditSubDialogFieldContactActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_EditSubDialogFieldContactActionPerformed
     
     
     
@@ -1640,6 +1681,7 @@ public class MainMenu extends javax.swing.JFrame {
             SubTable.setValueAt(subscriberList.get(i).getSubscriptionDate(), i, 6);
             SubTable.setValueAt(subscriberList.get(i).getSubscriptionDeadLine(), i, 7);
             SubTable.setValueAt(subscriberList.get(i).getIsMensalist(), i, 8);
+            
             
             aux = aux+1;
             
@@ -1734,11 +1776,11 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel EditSubDIalogLabelSubDeadLine;
     private javax.swing.JDialog EditSubDialog;
     private javax.swing.JCheckBox EditSubDialogCheckBoxIsMensalist;
+    private javax.swing.JCheckBox EditSubDialogCheckBoxIsMoto;
     private javax.swing.JCheckBox EditSubDialogCheckBoxPNT;
     private javax.swing.JCheckBox EditSubDialogCheckBoxQua;
     private javax.swing.JCheckBox EditSubDialogCheckBoxQui;
     private javax.swing.JCheckBox EditSubDialogCheckBoxSeg;
-    private javax.swing.JCheckBox EditSubDialogCheckBoxSegIsMoto;
     private javax.swing.JCheckBox EditSubDialogCheckBoxSex;
     private javax.swing.JCheckBox EditSubDialogCheckBoxTer;
     private javax.swing.JComboBox<String> EditSubDialogComboBox;

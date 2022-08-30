@@ -22,7 +22,7 @@ public class Subscriber implements Serializable {
     private String      license;
     private Boolean     isMensalist = true;
     private Boolean     isMotorBike = false;
-    private int         postgresId;
+    private int         postgresId = 0;
     
    
     

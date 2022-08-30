@@ -93,6 +93,7 @@ public class DataBaseManagement {
                 sub.setWeekDays(rs.getString("str_weekdays"));
                 sub.setIsMensalist(rs.getBoolean("bool_ismensalist"));
                 sub.setIsMotorBike(rs.getBoolean("bool_ismotorbike"));
+                sub.setPostgresId(rs.getInt("id_mensalista"));
                 
                 sublist.add(sub);
                 
@@ -108,7 +109,52 @@ public class DataBaseManagement {
     }
     
     
-    public void updateItemFromSubscriber(Subscriber sub){
+    public void updateItemFromSubscriber(Subscriber subOld, Subscriber subNew){
+        String sqlcmd = "UPDATE public.subscriber "
+                + "SET str_name = ?, str_carmodel = ?, str_contact = ?, str_initdate = ?, str_enddate = ?, str_license = ?, str_weekdays = ?, bool_ismensalist = ?, bool_ismotorbike = ? "
+                + "WHERE id_mensalista = ?;";
+        
+        
+        String query = "SELECT id_mensalista, str_name FROM public.subscriber WHERE UPPER(str_name)=?";
+        
+        if(subNew.getPostgresId() == 0){
+            System.out.println("primeiro");
+            try(java.sql.PreparedStatement st = this.con.prepareStatement(query)){
+                
+                st.setString(1, subOld.getName().toUpperCase());
+                
+                java.sql.ResultSet rs = st.executeQuery();
+                while(rs.next()){
+                
+                subNew.setPostgresId(rs.getInt("id_mensalista"));
+                
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        try(java.sql.PreparedStatement st = this.con.prepareStatement(sqlcmd)){
+            st.setString(1, subNew.getName());
+            st.setString(2, subNew.getCarModel());
+            st.setString(3, subNew.getContact());
+            st.setString(4, subNew.getSubscriptionDate());
+            st.setString(5, subNew.getSubscriptionDeadLine());
+            st.setString(6, subNew.getLicense());
+            st.setString(7, subNew.getWeekDays());
+            st.setBoolean(8, subNew.getIsMensalist());
+            st.setBoolean(9, subNew.getIsMotorBike());
+            st.setInt(10, subNew.getPostgresId());
+            
+            st.executeUpdate();
+                        
+            System.out.println("deu certo: " + sqlcmd);
+           
+        } catch (SQLException ex) {
+            Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+        
         //Criar a regra de update
         //https://www.javaguides.net/2020/02/java-jdbc-postgresql-update-example.html
         
