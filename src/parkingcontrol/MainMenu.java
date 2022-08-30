@@ -23,7 +23,8 @@ public class MainMenu extends javax.swing.JFrame {
         initComponents();
         this.db = new DataBaseManagement();
         subscriberList = db.selectFromSubscriber();
-        
+        veiculeList = db.selectFromVeicule();
+        this.updateTable();
     }
 
     /**
@@ -1198,22 +1199,13 @@ public class MainMenu extends javax.swing.JFrame {
         //veic.setIsSubscriber(subscriberList);
         
         
+        veic.setDate();
         
         veiculeList.add(veic);
         this.updateTable();
-        /*int aux = 1;
-        for(int i = 0; i<veiculeList.size(); i = i+1){
-            
-            mainTable.setValueAt(aux, i, 0);
-            mainTable.setValueAt(veiculeList.get(i).getLicense().toUpperCase(), i, 1);
-            mainTable.setValueAt(veiculeList.get(i).getTimeIn(), i, 2);
-            mainTable.setValueAt(veiculeList.get(i).getTimeOut(), i, 3);
-            mainTable.setValueAt(veiculeList.get(i).getIsSubscriber(), i, 4);
-            mainTable.setValueAt(veiculeList.get(i).getHasKey(), i, 5);
-            
-            aux = aux + 1;
-        }*/
-        System.out.println(veiculeList.get(0).getLicense() + " " + veiculeList.get(0).getTimeIn() + " " + veiculeList.get(0).getIsSubscriber().toString() + " " + veiculeList.get(0).getHasKey().toString() );
+        this.db.insertIntoVeicule(veic);
+        
+        
         
         AddVeicDialog.dispose();
         AddVeicDialogLicense.setText("");
@@ -1416,13 +1408,35 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void RemoveVeicDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveVeicDialogConfirmButtonActionPerformed
         // TODO add your handling code here:
+        
+        
+        //TEM DB aqui
+        int i = 0;
+        var veicOld = new VeiculeClass();
         String aux = RemoveVeicDialogComboBox.getSelectedItem().toString();
         int auxint = RemoveVeicDialogComboBox.getSelectedIndex();
         
         
+        
         if(aux.equals(veiculeList.get(auxint).getLicense())){
+            veicOld.setLicense(aux);
+            veicOld.setDate();
+        }
+        else{
+            int j = 0;
+            while(!aux.equals(veiculeList.get(j).getLicense())){
+                j = j +1;
+            }
+            veicOld.setLicense(aux);
+            veicOld.setDate();
+        }
+        
+        
+        if(aux.equals(veiculeList.get(auxint).getLicense())){
+            i = auxint;
             if("".equals(RemoveVeicDialogTextField.getText())){
                 veiculeList.get(auxint).setAutoTimeOut();
+                
             }
             else{
                 veiculeList.get(auxint).setManualTimeOut(RemoveVeicDialogTextField.getText());
@@ -1432,7 +1446,7 @@ public class MainMenu extends javax.swing.JFrame {
                   
             
         else{
-            int i = 0;
+            
             while(!aux.equals(veiculeList.get(i).getLicense())){
                 i = i+1;
             }
@@ -1451,7 +1465,7 @@ public class MainMenu extends javax.swing.JFrame {
         RemoveVeicDialog.dispose();
         
         
-        
+        this.db.updateItemFromVeicule(veicOld, veiculeList.get(i));
         this.updateTable();
         
     }//GEN-LAST:event_RemoveVeicDialogConfirmButtonActionPerformed
@@ -1531,9 +1545,18 @@ public class MainMenu extends javax.swing.JFrame {
 
     private void EditVeicDialogConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditVeicDialogConfirmButtonActionPerformed
         // TODO add your handling code here:
+        
+        //TEM DB aqui
+        
+        var veicOld = new VeiculeClass();
         String aux = EditVeicDialogComboBox.getSelectedItem().toString();
         int auxint = EditVeicDialogComboBox.getSelectedIndex();
         
+        
+        if(aux.equals(veiculeList.get(auxint).getLicense())){
+            veicOld.setLicense(aux);
+            veicOld.setDate();
+        }
         
         if(aux.equals(veiculeList.get(auxint).getLicense())){
             if(!"".equals(EditVeicDialogFieldLicense.getText())){
@@ -1554,6 +1577,7 @@ public class MainMenu extends javax.swing.JFrame {
         EditVeicDialog.dispose();
         
         EditVeicDialogComboBox.removeAllItems();
+        this.db.updateItemFromVeicule(veicOld, veiculeList.get(auxint));
         this.updateTable();
         
         

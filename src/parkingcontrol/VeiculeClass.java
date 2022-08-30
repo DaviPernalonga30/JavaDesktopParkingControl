@@ -22,6 +22,7 @@ public class VeiculeClass implements Serializable{
     private Boolean             isSubscriber;   
     private Boolean             hasKey;
     private Boolean             isMotorBike = false;
+    private int                 postgresId = 0;
     
     
     public void setLicense(String aux){
@@ -97,13 +98,26 @@ public class VeiculeClass implements Serializable{
     }
     
     public void setDate(){
-        formatter = new SimpleDateFormat("dd:MM:yyyy");
+        formatter = new SimpleDateFormat("dd/MM/yyyy");
         this.date = formatter.format(Calendar.getInstance().getTime());
+    }
+    
+    public void setManualDate(String str){
+        this.date = str;
     }
     
     public String getDate(){
         return this.date;
     }
+    
+    public void setPostgresId(int aux){
+        this.postgresId = aux;
+    }
+    
+    public int getPostgresId(){
+        return this.postgresId;
+    }
+    
     
     
 }
