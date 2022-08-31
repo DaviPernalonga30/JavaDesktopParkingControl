@@ -25,6 +25,9 @@ public class MainMenu extends javax.swing.JFrame {
         subscriberList = db.selectFromSubscriber();
         veiculeList = db.selectFromVeicule();
         this.updateTable();
+        this.calc = new Calculations();
+        
+        
     }
 
     /**
@@ -110,6 +113,8 @@ public class MainMenu extends javax.swing.JFrame {
         EditSubDIalogLabelCarModel = new javax.swing.JLabel();
         EditSubDIalogLabelSubDate = new javax.swing.JLabel();
         EditSubDIalogLabelSubDeadLine = new javax.swing.JLabel();
+        PopUpValorDevido = new javax.swing.JDialog();
+        PopUpValorDevidoLabel = new javax.swing.JLabel();
         AddVeic = new javax.swing.JButton();
         ScrollPaneTable = new javax.swing.JScrollPane();
         mainTable = new javax.swing.JTable();
@@ -825,6 +830,33 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap(34, Short.MAX_VALUE))
         );
 
+        PopUpValorDevido.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        PopUpValorDevido.setTitle("Valor Devido");
+        PopUpValorDevido.setAlwaysOnTop(true);
+        PopUpValorDevido.setMinimumSize(new java.awt.Dimension(50, 100));
+        PopUpValorDevido.setName("Valor Devido"); // NOI18N
+        PopUpValorDevido.setPreferredSize(new java.awt.Dimension(50, 100));
+        PopUpValorDevido.setResizable(false);
+
+        PopUpValorDevidoLabel.setMinimumSize(new java.awt.Dimension(40, 25));
+
+        javax.swing.GroupLayout PopUpValorDevidoLayout = new javax.swing.GroupLayout(PopUpValorDevido.getContentPane());
+        PopUpValorDevido.getContentPane().setLayout(PopUpValorDevidoLayout);
+        PopUpValorDevidoLayout.setHorizontalGroup(
+            PopUpValorDevidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PopUpValorDevidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PopUpValorDevidoLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        PopUpValorDevidoLayout.setVerticalGroup(
+            PopUpValorDevidoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PopUpValorDevidoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(PopUpValorDevidoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(136, Short.MAX_VALUE))
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Controle de Veículos");
         setAlwaysOnTop(true);
@@ -1212,6 +1244,7 @@ public class MainMenu extends javax.swing.JFrame {
         AddVeicDialogManualTime.setText("");
         AddVeicDialogSubscriber.setSelected(false);
         AddVeicDialogHasKey.setSelected(false);
+        AddVeicDialogIsMotorBike.setSelected(false);
         
         
     }//GEN-LAST:event_AddVeicDialogConfirmButtonActionPerformed
@@ -1459,15 +1492,18 @@ public class MainMenu extends javax.swing.JFrame {
         }
         
         
-        
-        
+        //Mexer aqui quando criar uma função de decisão.
+        PopUpValorDevido.setLocation(RemoveVeicDialog.getLocationOnScreen());
+        PopUpValorDevido.show();
+        String valStr = Float.toString(calc.getValDevido(veiculeList.get(i)));
+        PopUpValorDevidoLabel.setText(valStr);
         RemoveVeicDialogComboBox.removeAllItems();
         RemoveVeicDialog.dispose();
         
         
         this.db.updateItemFromVeicule(veicOld, veiculeList.get(i));
         this.updateTable();
-        
+               
     }//GEN-LAST:event_RemoveVeicDialogConfirmButtonActionPerformed
 
     private void RemoveVeicDialogComboBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveVeicDialogComboBoxActionPerformed
@@ -1828,6 +1864,8 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel EditVeicDialogTextTimeIn;
     private javax.swing.JLabel EditVeicDialogTextTimeOut;
     private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JDialog PopUpValorDevido;
+    private javax.swing.JLabel PopUpValorDevidoLabel;
     private javax.swing.JButton RemoveSub;
     private javax.swing.JDialog RemoveSubDialog;
     private javax.swing.JComboBox<String> RemoveSubDialogComboBox;
@@ -1860,6 +1898,6 @@ public class MainMenu extends javax.swing.JFrame {
     private ArrayList<Object> list;
     private javax.swing.ImageIcon img = new javax.swing.ImageIcon("icons/2dEstacionamento.png");
     private DataBaseManagement db;
-
+    private Calculations calc;
     
 }

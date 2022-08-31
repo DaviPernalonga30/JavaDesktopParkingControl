@@ -74,7 +74,15 @@ public class ArquivesManagement {
         this.SaveFile(Veic, "Documentos/autosaveVeic");
         this.SaveFile(Subs, "Documentos/autosaveSubs");
     }
+     
+    
+    
+    public void CSVcreation(ArrayList aux){
         
+        
+        
+        
+    }
     
     
     
