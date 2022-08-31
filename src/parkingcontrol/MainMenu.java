@@ -26,6 +26,8 @@ public class MainMenu extends javax.swing.JFrame {
         veiculeList = db.selectFromVeicule();
         this.updateTable();
         this.calc = new Calculations();
+        this.calc.setValTurnCar(7.0f);
+        this.calc.setValFractionHrMoto(3.5f);
         
         
     }
@@ -123,16 +125,17 @@ public class MainMenu extends javax.swing.JFrame {
         RemoveSub = new javax.swing.JButton();
         RemoveVeic = new javax.swing.JButton();
         MenuBar = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        FileMenu = new javax.swing.JMenu();
         menubarNew = new javax.swing.JMenuItem();
         menubarOpen = new javax.swing.JMenuItem();
         menubarSave = new javax.swing.JMenuItem();
         menubarNewWindow = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        EditMenu = new javax.swing.JMenu();
         EditMenuEditVeic = new javax.swing.JMenuItem();
         EditMenuEditSub = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
+        ViewMenu = new javax.swing.JMenu();
         ViewMenuSubscriberView = new javax.swing.JMenuItem();
+        ViewMenuViewDailyVal = new javax.swing.JMenuItem();
 
         SaveLoadDialog.setPreferredSize(new java.awt.Dimension(500, 300));
 
@@ -835,7 +838,6 @@ public class MainMenu extends javax.swing.JFrame {
         PopUpValorDevido.setAlwaysOnTop(true);
         PopUpValorDevido.setMinimumSize(new java.awt.Dimension(50, 100));
         PopUpValorDevido.setName("Valor Devido"); // NOI18N
-        PopUpValorDevido.setPreferredSize(new java.awt.Dimension(50, 100));
         PopUpValorDevido.setResizable(false);
 
         PopUpValorDevidoLabel.setMinimumSize(new java.awt.Dimension(40, 25));
@@ -1022,7 +1024,7 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
-        jMenu1.setText("File");
+        FileMenu.setText("File");
 
         menubarNew.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menubarNew.setText("New");
@@ -1031,7 +1033,7 @@ public class MainMenu extends javax.swing.JFrame {
                 menubarNewActionPerformed(evt);
             }
         });
-        jMenu1.add(menubarNew);
+        FileMenu.add(menubarNew);
 
         menubarOpen.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_O, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menubarOpen.setText("Open");
@@ -1040,7 +1042,7 @@ public class MainMenu extends javax.swing.JFrame {
                 menubarOpenActionPerformed(evt);
             }
         });
-        jMenu1.add(menubarOpen);
+        FileMenu.add(menubarOpen);
 
         menubarSave.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_S, java.awt.event.InputEvent.CTRL_DOWN_MASK));
         menubarSave.setText("Save");
@@ -1049,7 +1051,7 @@ public class MainMenu extends javax.swing.JFrame {
                 menubarSaveActionPerformed(evt);
             }
         });
-        jMenu1.add(menubarSave);
+        FileMenu.add(menubarSave);
 
         menubarNewWindow.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_N, java.awt.event.InputEvent.ALT_DOWN_MASK));
         menubarNewWindow.setText("New Window");
@@ -1059,11 +1061,11 @@ public class MainMenu extends javax.swing.JFrame {
                 menubarNewWindowActionPerformed(evt);
             }
         });
-        jMenu1.add(menubarNewWindow);
+        FileMenu.add(menubarNewWindow);
 
-        MenuBar.add(jMenu1);
+        MenuBar.add(FileMenu);
 
-        jMenu2.setText("Edit");
+        EditMenu.setText("Edit");
 
         EditMenuEditVeic.setText("Editar Veículo");
         EditMenuEditVeic.addActionListener(new java.awt.event.ActionListener() {
@@ -1071,7 +1073,7 @@ public class MainMenu extends javax.swing.JFrame {
                 EditMenuEditVeicActionPerformed(evt);
             }
         });
-        jMenu2.add(EditMenuEditVeic);
+        EditMenu.add(EditMenuEditVeic);
 
         EditMenuEditSub.setText("Editar Mensalista");
         EditMenuEditSub.addActionListener(new java.awt.event.ActionListener() {
@@ -1079,11 +1081,11 @@ public class MainMenu extends javax.swing.JFrame {
                 EditMenuEditSubActionPerformed(evt);
             }
         });
-        jMenu2.add(EditMenuEditSub);
+        EditMenu.add(EditMenuEditSub);
 
-        MenuBar.add(jMenu2);
+        MenuBar.add(EditMenu);
 
-        jMenu3.setText("View");
+        ViewMenu.setText("View");
 
         ViewMenuSubscriberView.setText("Mensalistas");
         ViewMenuSubscriberView.addActionListener(new java.awt.event.ActionListener() {
@@ -1091,9 +1093,17 @@ public class MainMenu extends javax.swing.JFrame {
                 ViewMenuSubscriberViewActionPerformed(evt);
             }
         });
-        jMenu3.add(ViewMenuSubscriberView);
+        ViewMenu.add(ViewMenuSubscriberView);
 
-        MenuBar.add(jMenu3);
+        ViewMenuViewDailyVal.setText("Val. Diário");
+        ViewMenuViewDailyVal.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ViewMenuViewDailyValActionPerformed(evt);
+            }
+        });
+        ViewMenu.add(ViewMenuViewDailyVal);
+
+        MenuBar.add(ViewMenu);
 
         setJMenuBar(MenuBar);
 
@@ -1312,7 +1322,7 @@ public class MainMenu extends javax.swing.JFrame {
         
         
         //sub.setAutoSubscriptionDeadLine();
-        System.out.println(sub.getName() + " " + sub.getSubscriptionDate() + " " + sub.getContact());
+        //System.out.println(sub.getName() + " " + sub.getSubscriptionDate() + " " + sub.getContact());
         
         subscriberList.add(sub);
         AddSubDialog.dispose();
@@ -1720,6 +1730,19 @@ public class MainMenu extends javax.swing.JFrame {
 
         
     }//GEN-LAST:event_EditSubDialogConfirmButtonActionPerformed
+
+    private void ViewMenuViewDailyValActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewMenuViewDailyValActionPerformed
+        // TODO add your handling code here:
+        //UsarDialog.
+        //Total de carros
+        //Total de avulsos
+        //Total de Mensalistas
+        //Total arrecadado de avulsos
+        
+        
+        
+        
+    }//GEN-LAST:event_ViewMenuViewDailyValActionPerformed
     
     
     
@@ -1826,6 +1849,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JTextField AddVeicDialogManualTime;
     private javax.swing.JCheckBox AddVeicDialogSubscriber;
     private javax.swing.JDesktopPane DesktopPane;
+    private javax.swing.JMenu EditMenu;
     private javax.swing.JMenuItem EditMenuEditSub;
     private javax.swing.JMenuItem EditMenuEditVeic;
     private javax.swing.JLabel EditSubDIalogLabelCarModel;
@@ -1863,6 +1887,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JLabel EditVeicDialogTextLicense;
     private javax.swing.JLabel EditVeicDialogTextTimeIn;
     private javax.swing.JLabel EditVeicDialogTextTimeOut;
+    private javax.swing.JMenu FileMenu;
     private javax.swing.JMenuBar MenuBar;
     private javax.swing.JDialog PopUpValorDevido;
     private javax.swing.JLabel PopUpValorDevidoLabel;
@@ -1882,10 +1907,9 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JDialog SubscriberView;
     private javax.swing.JLabel TextHorarioDeEntrada;
     private javax.swing.JLabel TextPlacaDoVeiculo;
+    private javax.swing.JMenu ViewMenu;
     private javax.swing.JMenuItem ViewMenuSubscriberView;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuItem ViewMenuViewDailyVal;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable mainTable;
     private javax.swing.JMenuItem menubarNew;

@@ -18,16 +18,20 @@ public class Calculations {
     
     
     
-    
+    //Implementar mais somas aqui.
+    //inclusive de mensalistas e avulsos.
     public void calcEndDay(java.util.ArrayList<VeiculeClass> veicList){
         float sum = 0;
+        
         for(int i = 0; i<veicList.size(); i=i+1){
             var aux = veicList.get(i);
-            if(aux.getIsMotorBike() == true){
-                sum = sum + this.valTurnMoto;
-            }
-            else{
-                sum = sum + this.valTurnCar;
+            if(aux.getIsSubscriber() == false){
+                if(aux.getIsMotorBike() == true){
+                    sum = sum + this.valTurnMoto;
+                }
+                else{
+                    sum = sum + this.valTurnCar;
+                }
             }
                
         }
@@ -60,6 +64,9 @@ public class Calculations {
     }
     
     public float getValDevido(VeiculeClass veic){
+        if(veic.getIsSubscriber()== true){
+            return 0;
+        }
         if(veic.getIsMotorBike() == true){
             this.setValDevido(this.getValTurnMoto());
         }

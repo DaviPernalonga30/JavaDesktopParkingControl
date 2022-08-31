@@ -31,7 +31,7 @@ public class DataBaseManagement {
         try{
             Class.forName("org.postgresql.Driver");
             this.con = DriverManager.getConnection(url, user, password);
-            System.out.println("Conexão deu certo!");
+            //System.out.println("Conexão deu certo!");
             
         }
         catch(Exception e){
@@ -60,7 +60,7 @@ public class DataBaseManagement {
             st.executeUpdate();
             
             
-            System.out.println("deu certo: " + sqlcmd);
+            //System.out.println("deu certo: " + sqlcmd);
             
             
             
@@ -118,7 +118,7 @@ public class DataBaseManagement {
         String query = "SELECT id_mensalista, str_name FROM public.subscriber WHERE UPPER(str_name)=?";
         
         if(subNew.getPostgresId() == 0){
-            System.out.println("primeiro");
+            //System.out.println("primeiro");
             try(java.sql.PreparedStatement st = this.con.prepareStatement(query)){
                 
                 st.setString(1, subOld.getName().toUpperCase());
@@ -147,7 +147,7 @@ public class DataBaseManagement {
             
             st.executeUpdate();
                         
-            System.out.println("deu certo: " + sqlcmd);
+            //System.out.println("deu certo: " + sqlcmd);
            
         } catch (SQLException ex) {
             Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
@@ -177,7 +177,7 @@ public class DataBaseManagement {
             
             st.executeUpdate();
             
-            System.out.println("deu certo: " + sqlcmd);
+            //System.out.println("deu certo: " + sqlcmd);
             
             
         } catch (SQLException ex) {
@@ -238,7 +238,7 @@ public class DataBaseManagement {
         
         if(veicNew.getPostgresId() == 0){
             try(java.sql.PreparedStatement st = this.con.prepareStatement(query)){
-                System.out.println(veicOld.getLicense());
+                //System.out.println(veicOld.getLicense());
                 st.setString(1, veicOld.getLicense());
                 st.setString(2, veicOld.getDate());
                 
@@ -253,8 +253,8 @@ public class DataBaseManagement {
             }
         }
         try(java.sql.PreparedStatement st = this.con.prepareStatement(sqlcmd)){
-            System.out.println(veicOld.getLicense());
-            System.out.println(veicNew.getLicense());
+            //System.out.println(veicOld.getLicense());
+            //System.out.println(veicNew.getLicense());
             st.setString(1, veicNew.getLicense());
             st.setString(2, veicNew.getTimeIn());
             st.setString(3, veicNew.getTimeOut());
@@ -272,11 +272,5 @@ public class DataBaseManagement {
             Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    
-    
-    
-    
-    
     
 }

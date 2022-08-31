@@ -76,6 +76,11 @@ public class ArquivesManagement {
     }
      
     
+    //criar forma de salvar com CSV alguns relatórios
+    //facilitar impressão de mensalistas e de veiculos em determinado dia
+    //relatorios financeiros
+    //fazer um arquivo de configurações
+    //relacionado ao banco de dados, usuario, senha, valores.
     
     public void CSVcreation(ArrayList aux){
         
