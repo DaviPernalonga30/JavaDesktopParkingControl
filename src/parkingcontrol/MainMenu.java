@@ -27,7 +27,7 @@ public class MainMenu extends javax.swing.JFrame {
         this.updateTable();
         this.calc = new Calculations();
         this.calc.setValTurnCar(7.0f);
-        this.calc.setValFractionHrMoto(3.5f);
+        this.calc.setValFractionHrMoto(3.0f);
         
         
     }
@@ -117,6 +117,10 @@ public class MainMenu extends javax.swing.JFrame {
         EditSubDIalogLabelSubDeadLine = new javax.swing.JLabel();
         PopUpValorDevido = new javax.swing.JDialog();
         PopUpValorDevidoLabel = new javax.swing.JLabel();
+        ViewMenuViewDailyValDialog = new javax.swing.JDialog();
+        ViewMenuViewDailyValDialgoLabelValTotal = new javax.swing.JLabel();
+        ViewMenuViewDailyValDialgoLabelTotalSubs = new javax.swing.JLabel();
+        ViewMenuViewDailyValDialgoLabelTotalVeicules = new javax.swing.JLabel();
         AddVeic = new javax.swing.JButton();
         ScrollPaneTable = new javax.swing.JScrollPane();
         mainTable = new javax.swing.JTable();
@@ -857,6 +861,44 @@ public class MainMenu extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(PopUpValorDevidoLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 44, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(136, Short.MAX_VALUE))
+        );
+
+        ViewMenuViewDailyValDialog.setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        ViewMenuViewDailyValDialog.setTitle("Valor arrecado no dia");
+        ViewMenuViewDailyValDialog.setAlwaysOnTop(true);
+        ViewMenuViewDailyValDialog.setMinimumSize(new java.awt.Dimension(280, 145));
+        ViewMenuViewDailyValDialog.setName("ViewMenuViewDailyValDialog"); // NOI18N
+        ViewMenuViewDailyValDialog.setPreferredSize(new java.awt.Dimension(350, 145));
+        ViewMenuViewDailyValDialog.setResizable(false);
+
+        ViewMenuViewDailyValDialgoLabelValTotal.setText("jLabel1");
+
+        ViewMenuViewDailyValDialgoLabelTotalSubs.setText("jLabel1");
+
+        ViewMenuViewDailyValDialgoLabelTotalVeicules.setText("jLabel1");
+
+        javax.swing.GroupLayout ViewMenuViewDailyValDialogLayout = new javax.swing.GroupLayout(ViewMenuViewDailyValDialog.getContentPane());
+        ViewMenuViewDailyValDialog.getContentPane().setLayout(ViewMenuViewDailyValDialogLayout);
+        ViewMenuViewDailyValDialogLayout.setHorizontalGroup(
+            ViewMenuViewDailyValDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ViewMenuViewDailyValDialogLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(ViewMenuViewDailyValDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(ViewMenuViewDailyValDialgoLabelTotalVeicules, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                    .addComponent(ViewMenuViewDailyValDialgoLabelTotalSubs, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ViewMenuViewDailyValDialgoLabelValTotal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        ViewMenuViewDailyValDialogLayout.setVerticalGroup(
+            ViewMenuViewDailyValDialogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ViewMenuViewDailyValDialogLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addComponent(ViewMenuViewDailyValDialgoLabelValTotal)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ViewMenuViewDailyValDialgoLabelTotalSubs)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ViewMenuViewDailyValDialgoLabelTotalVeicules)
+                .addContainerGap(49, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -1734,6 +1776,22 @@ public class MainMenu extends javax.swing.JFrame {
     private void ViewMenuViewDailyValActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewMenuViewDailyValActionPerformed
         // TODO add your handling code here:
         //UsarDialog.
+        ViewMenuViewDailyValDialog.setLocation(DesktopPane.getLocationOnScreen());
+        ViewMenuViewDailyValDialog.show();
+        ViewMenuViewDailyValDialgoLabelValTotal.setText("O valor total do dia: " + new Calculations().getDayReturn());
+        int count = 0;
+        for(int i = 0; i<veiculeList.size(); i = i + 1){
+            if(veiculeList.get(i).getIsSubscriber() == true){
+                count = count + 1;
+            }
+        }
+        
+        
+        String text = Integer.toString(count);
+        ViewMenuViewDailyValDialgoLabelTotalSubs.setText("Total de mensalistas que vieram: " + text);
+        ViewMenuViewDailyValDialgoLabelTotalVeicules.setText("Total de carros: " + Integer.toString(veiculeList.size()));
+        
+        
         //Total de carros
         //Total de avulsos
         //Total de Mensalistas
@@ -1910,6 +1968,10 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JMenu ViewMenu;
     private javax.swing.JMenuItem ViewMenuSubscriberView;
     private javax.swing.JMenuItem ViewMenuViewDailyVal;
+    private javax.swing.JLabel ViewMenuViewDailyValDialgoLabelTotalSubs;
+    private javax.swing.JLabel ViewMenuViewDailyValDialgoLabelTotalVeicules;
+    private javax.swing.JLabel ViewMenuViewDailyValDialgoLabelValTotal;
+    private javax.swing.JDialog ViewMenuViewDailyValDialog;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable mainTable;
     private javax.swing.JMenuItem menubarNew;
@@ -1919,7 +1981,7 @@ public class MainMenu extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
     private ArrayList<VeiculeClass> veiculeList = new ArrayList();
     private ArrayList<Subscriber> subscriberList = new ArrayList();
-    private ArrayList<Object> list;
+    private ArrayList list;
     private javax.swing.ImageIcon img = new javax.swing.ImageIcon("icons/2dEstacionamento.png");
     private DataBaseManagement db;
     private Calculations calc;
