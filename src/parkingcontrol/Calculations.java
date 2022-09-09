@@ -45,7 +45,15 @@ public class Calculations {
         
     }
     
-    
+    public void dateComparation(){
+        
+        
+        
+        
+        
+        
+    }
+       
     //getters
     public float getValTurnCar(){
         return this.valTurnCar;
@@ -60,6 +68,7 @@ public class Calculations {
         return this.valFractionHrMoto;
     }
     public float getDayReturn(){
+        
         return this.dayReturn;
     }
     

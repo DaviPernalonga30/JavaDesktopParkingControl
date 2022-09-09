@@ -1778,7 +1778,8 @@ public class MainMenu extends javax.swing.JFrame {
         //UsarDialog.
         ViewMenuViewDailyValDialog.setLocation(DesktopPane.getLocationOnScreen());
         ViewMenuViewDailyValDialog.show();
-        ViewMenuViewDailyValDialgoLabelValTotal.setText("O valor total do dia: " + new Calculations().getDayReturn());
+        this.calc.calcEndDay(veiculeList);
+        ViewMenuViewDailyValDialgoLabelValTotal.setText("O valor total do dia: " + this.calc.getDayReturn());
         int count = 0;
         for(int i = 0; i<veiculeList.size(); i = i + 1){
             if(veiculeList.get(i).getIsSubscriber() == true){
