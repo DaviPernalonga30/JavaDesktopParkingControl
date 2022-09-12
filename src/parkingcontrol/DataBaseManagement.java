@@ -273,30 +273,7 @@ public class DataBaseManagement {
         }
     }
     
-    public java.util.ArrayList selectCarMonth(){
-        java.util.ArrayList list = new java.util.ArrayList();
-        String sqlcmd = "SELECT * FROM public.veicule"
-                + "WHERE str_date = ?";
-        
-        try(java.sql.PreparedStatement st = con.prepareStatement(sqlcmd)){
-            
-            
-            
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-        
-        
-        
-        
-        
-        
-        return list;
-    }
-    
-    
+     
     
     
     
