@@ -15,36 +15,60 @@ import java.util.logging.Logger;
  *
  * @author davip
  */
-public class DataBaseManagement {
-    private String url;
-    private String user;
-    private String password;
-    private Connection con;
-    
-    
-    DataBaseManagement(){
-        this.url = "jdbc:postgresql://localhost:5050/2D-Estacionamento";
-        this.user = "postgres";
-        this.password = "postgres";
-        
-        
-        try{
-            Class.forName("org.postgresql.Driver");
-            this.con = DriverManager.getConnection(url, user, password);
-            //System.out.println("Conexão deu certo!");
-            
+public class DataBaseManagement{
+    final private String url= "jdbc:postgresql://192.168.0.17:5050/2D-Estacionamento";
+    final private String user = "postgres";
+    final private String password = "postgres";
+    public Connection con;
+
+    public void setCon(){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run()
+            {
+                try
+                {
+                    Class.forName("org.postgresql.Driver");
+                    con = DriverManager.getConnection(url, user, password);
+
+                    System.out.println("connected:");
+                }
+                catch (Exception e)
+                {
+
+                    System.out.print(e.getMessage());
+                    e.printStackTrace();
+                }
+            }
+        });
+        thread.start();
+        try
+        {
+            thread.join();
         }
-        catch(Exception e){
+        catch (Exception e)
+        {
             e.printStackTrace();
+
         }
     }
-    
+
+
+    public DataBaseManagement(){
+        this.setCon();
+
+
+    }
+
+
+
+
     public void insertIntoSubscriber(Subscriber sub){
         String sqlcmd = "INSERT INTO public.subscriber "
                 + "(str_name, str_carmodel, str_contact, str_initdate, str_enddate, str_license, str_weekdays, bool_ismensalist, bool_ismotorbike) "
-                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";        
-        
-        
+                + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+
         
         try(java.sql.PreparedStatement st = this.con.prepareStatement(sqlcmd)){
             st.setString(1, sub.getName());
@@ -56,34 +80,34 @@ public class DataBaseManagement {
             st.setString(7, sub.getWeekDays());
             st.setBoolean(8, sub.getIsMensalist());
             st.setBoolean(9, sub.getIsMotorBike());
-            
+
             st.executeUpdate();
-            
-            
+
+
             //System.out.println("deu certo: " + sqlcmd);
-            
-            
-            
+
+
+
         }
         catch(Exception e){
             e.printStackTrace();
         }
-    
-    
+
+
     }
-    
+
     public java.util.ArrayList selectFromSubscriber(){
         //depois criar uma regra para que só sejam carregados
         //aqueles que em 3 meses ainda foram mensalistas.
+
         
-        
-        java.util.ArrayList<Subscriber> sublist = new java.util.ArrayList();
+        java.util.ArrayList sublist = new java.util.ArrayList();
         String query = "SELECT * FROM public.subscriber";
-        
+
         try(java.sql.Statement st = this.con.createStatement()){
             java.sql.ResultSet rs = st.executeQuery(query);
             while(rs.next()){
-                var sub = new Subscriber();
+                Subscriber sub = new Subscriber();
                 sub.setName(rs.getString("str_name"));
                 sub.setCarModel(rs.getString("str_carmodel"));
                 sub.setContact(rs.getString("str_contact"));
@@ -94,40 +118,40 @@ public class DataBaseManagement {
                 sub.setIsMensalist(rs.getBoolean("bool_ismensalist"));
                 sub.setIsMotorBike(rs.getBoolean("bool_ismotorbike"));
                 sub.setPostgresId(rs.getInt("id_mensalista"));
-                
+
                 sublist.add(sub);
-                
+
             }
-            
-      
+
+
         } catch (SQLException ex) {
             Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
+
+
         return sublist;
     }
-    
-    
+
+
     public void updateItemFromSubscriber(Subscriber subOld, Subscriber subNew){
         String sqlcmd = "UPDATE public.subscriber "
                 + "SET str_name = ?, str_carmodel = ?, str_contact = ?, str_initdate = ?, str_enddate = ?, str_license = ?, str_weekdays = ?, bool_ismensalist = ?, bool_ismotorbike = ? "
                 + "WHERE id_mensalista = ?;";
-        
-        
+
+
         String query = "SELECT id_mensalista, str_name FROM public.subscriber WHERE UPPER(str_name)=?";
         
         if(subNew.getPostgresId() == 0){
             //System.out.println("primeiro");
             try(java.sql.PreparedStatement st = this.con.prepareStatement(query)){
-                
+
                 st.setString(1, subOld.getName().toUpperCase());
-                
+
                 java.sql.ResultSet rs = st.executeQuery();
                 while(rs.next()){
-                
-                subNew.setPostgresId(rs.getInt("id_mensalista"));
-                
+
+                    subNew.setPostgresId(rs.getInt("id_mensalista"));
+
                 }
             } catch (SQLException ex) {
                 Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
@@ -144,27 +168,27 @@ public class DataBaseManagement {
             st.setBoolean(8, subNew.getIsMensalist());
             st.setBoolean(9, subNew.getIsMotorBike());
             st.setInt(10, subNew.getPostgresId());
-            
+
             st.executeUpdate();
-                        
+
             //System.out.println("deu certo: " + sqlcmd);
-           
+
         } catch (SQLException ex) {
             Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         //Criar a regra de update
         //https://www.javaguides.net/2020/02/java-jdbc-postgresql-update-example.html
-        
-     
+
+
     }
-    
-    
+
+
     public void insertIntoVeicule(VeiculeClass veic){
         String sqlcmd = "INSERT INTO public.veicule"
                 + "(str_license, str_timein, str_timeout, bool_issubscriber, bool_haskey, bool_ismotorbike, str_date) "
                 + "VALUES(?, ?, ?, ?, ?, ?, ?)";
-        
+
         
         try(java.sql.PreparedStatement st = this.con.prepareStatement(sqlcmd)){
             st.setString(1, veic.getLicense());
@@ -174,34 +198,34 @@ public class DataBaseManagement {
             st.setBoolean(5, veic.getHasKey());
             st.setBoolean(6, veic.getIsMotorBike());
             st.setString(7, veic.getDate());
-            
+
             st.executeUpdate();
-            
+
             //System.out.println("deu certo: " + sqlcmd);
-            
-            
+
+
         } catch (SQLException ex) {
             Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
     }
-    
+
     public java.util.ArrayList selectFromVeicule(){
         java.util.ArrayList<VeiculeClass> veicList= new java.util.ArrayList();
         String sqlcmd = "SELECT * FROM public.veicule WHERE str_date=?";
         java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("dd/MM/yyyy");
         String auxDate = formatter.format(java.util.Calendar.getInstance().getTime());
         //fazer a parte do calendário e do formatter.
-        
-        
-        
+
+
+
         
         try(java.sql.PreparedStatement st = this.con.prepareStatement(sqlcmd)){
             st.setString(1, auxDate);
-            
+
             java.sql.ResultSet rs = st.executeQuery();
             while(rs.next()){
-                var aux = new VeiculeClass();
+                VeiculeClass aux = new VeiculeClass();
                 aux.setLicense(rs.getString("str_license"));
                 aux.setManualTimeIn(rs.getString("str_timein"));
                 aux.setManualTimeOut(rs.getString("str_timeout"));
@@ -210,44 +234,44 @@ public class DataBaseManagement {
                 aux.setIsMotorBike(rs.getBoolean("bool_ismotorbike"));
                 aux.setManualDate(rs.getString("str_date"));
                 aux.setPostgresId(rs.getInt("id_veiculo"));
-                
+
                 veicList.add(aux);
-                
+
             }
-            
-            
-            
-            
+
+
+
+
         } catch (SQLException ex) {
             Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
-        
+
+
+
         return veicList;
     }
-    
+
     public void updateItemFromVeicule(VeiculeClass veicOld, VeiculeClass veicNew){
         String sqlcmd = "UPDATE public.veicule "
                 + "SET str_license = ?, str_timein = ?, str_timeout = ?, bool_issubscriber = ?, bool_haskey = ?, bool_ismotorbike = ? "
                 + "WHERE id_veiculo = ?";
-        
-        
+
+
         String query = "SELECT id_veiculo, str_license FROM public.veicule WHERE str_license=? and str_date=?";
-        
+
         
         if(veicNew.getPostgresId() == 0){
             try(java.sql.PreparedStatement st = this.con.prepareStatement(query)){
                 //System.out.println(veicOld.getLicense());
                 st.setString(1, veicOld.getLicense());
                 st.setString(2, veicOld.getDate());
-                
+
                 java.sql.ResultSet rs = st.executeQuery();
-                
+
                 while(rs.next()){
                     veicNew.setPostgresId(rs.getInt("id_veiculo"));
                 }
-                
+
             } catch (SQLException ex) {
                 Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
             }
@@ -262,19 +286,20 @@ public class DataBaseManagement {
             st.setBoolean(5, veicNew.getHasKey());
             st.setBoolean(6, veicNew.getIsMotorBike());
             st.setInt(7, veicNew.getPostgresId());
-            
-            
+
+
             st.executeUpdate();
-            
-            
-            
+
+
+
         } catch (SQLException ex) {
             Logger.getLogger(DataBaseManagement.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-     
-    
-    
-    
+
+
+
+
+
 }
+

@@ -23,6 +23,20 @@ public class MainMenu extends javax.swing.JFrame {
         initComponents();
         this.db = new DataBaseManagement();
         subscriberList = db.selectFromSubscriber();
+        Subscriber aux1 = new Subscriber();
+        Subscriber aux2 = new Subscriber();
+        for(int i = 0; i<subscriberList.size(); i=i+1){
+            aux1 = subscriberList.get(i);
+            aux2 = subscriberList.get(i);
+            aux2.setAutoIsMensalist();
+            db.updateItemFromSubscriber(aux1, aux2); 
+           
+                       
+        }
+        
+        
+        
+        subscriberList = db.selectFromSubscriber();
         veiculeList = db.selectFromVeicule();
         this.updateTable();
         this.calc = new Calculations();
@@ -1497,7 +1511,7 @@ public class MainMenu extends javax.swing.JFrame {
         
         //TEM DB aqui
         int i = 0;
-        var veicOld = new VeiculeClass();
+        VeiculeClass veicOld = new VeiculeClass();
         String aux = RemoveVeicDialogComboBox.getSelectedItem().toString();
         int auxint = RemoveVeicDialogComboBox.getSelectedIndex();
         
@@ -1636,7 +1650,7 @@ public class MainMenu extends javax.swing.JFrame {
         
         //TEM DB aqui
         
-        var veicOld = new VeiculeClass();
+        VeiculeClass veicOld = new VeiculeClass();
         String aux = EditVeicDialogComboBox.getSelectedItem().toString();
         int auxint = EditVeicDialogComboBox.getSelectedIndex();
         

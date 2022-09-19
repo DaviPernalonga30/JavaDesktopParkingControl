@@ -24,7 +24,7 @@ public class Calculations {
         float sum = 0;
         
         for(int i = 0; i<veicList.size(); i=i+1){
-            var aux = veicList.get(i);
+            VeiculeClass aux = veicList.get(i);
             if(aux.getIsSubscriber() == false){
                 if(aux.getIsMotorBike() == true){
                     sum = sum + this.valTurnMoto;

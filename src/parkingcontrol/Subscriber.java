@@ -150,16 +150,20 @@ public class Subscriber implements Serializable {
         
         
         
-        if(dateaux1 == auxint1){
-            if(dateaux2 == auxint2){
-                if(dateaux3 == auxint3){
-                    this.setIsMensalist(false);
+        if(dateaux3 <= auxint3){
+            if(dateaux2 < auxint2){
+                this.setIsMensalist(true);
+                return;
+            
+            }else{
+                if(dateaux1 <= auxint1){
+                    this.setIsMensalist(true);
                     return;
                 }
             }
           
         }        
-        this.setIsMensalist(true);
+        this.setIsMensalist(false);
     }
     
     public boolean getIsMotorBike(){
