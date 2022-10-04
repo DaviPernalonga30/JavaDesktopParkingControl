@@ -155,7 +155,13 @@ public class Subscriber implements Serializable {
                 this.setIsMensalist(true);
                 return;
             
-            }else{
+            }
+            else if(dateaux2 > auxint2){
+                this.setIsMensalist(false);
+                return;
+            }
+            
+            else{
                 if(dateaux1 <= auxint1){
                     this.setIsMensalist(true);
                     return;
